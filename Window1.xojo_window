@@ -769,7 +769,7 @@ End
 		Sub Open()
 		  LoadImage // C'est moi qui le rajoute ici comme cela je n'ai pas à cliquer sur le bouton à chaque fois
 		  
-		  mchargeImageDuCanvas // 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois
+		  mchargeImageDuCanvas // 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
 		  
 		  
 		End Sub
