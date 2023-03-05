@@ -24,6 +24,7 @@ Inherits Application
 		J'ai fait un README "A LIRE MICHEL XOJO"
 		
 		2023 0305 Je créer un Repository (privé) sur GitHub ce jour. J'avais déjà un compte toutefois.
+		J'élimine les modifications de .DStore dans GitHub
 		
 		___
 		
