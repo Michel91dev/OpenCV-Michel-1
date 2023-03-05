@@ -1,7 +1,7 @@
 #tag Class
 Protected Class App
 Inherits Application
-	#tag Note, Name = Mes Modifs Michel
+	#tag Note, Name = A LIRE GENERAL
 		2023 0305 
 		Je prends conscience que le code figure dans les codes externe, ce que je trouve GENIAL
 		A l'avenir je continuera à programmer de la sorte car le code est tout ensemble dans un même fichier
@@ -23,6 +23,15 @@ Inherits Application
 		
 		J'ai fait un README "A LIRE MICHEL XOJO"
 		
+		2023 0305 Je créer un Repository (privé) sur GitHub ce jour. J'avais déjà un compte toutefois.
+		
+		___
+		
+		
+	#tag EndNote
+
+	#tag Note, Name = Modifs de Code
+		2023 0305 
 		J'ai éliminé le code long à executé dont je ne voyais pas l'intérêt qui parse tout le dossier "images" et qui en fait une liste 
 		dans un Dictionnary.
 		J'ai mis ce code pour ne pas le perdre dans une méthode de Window1 qui j'ai nommée "faitListeDeFichiers"
