@@ -772,6 +772,7 @@ End
 		  mchargeImageDuCanvas // 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
 		  
 		  // voyons si cela s'upload sur GitHub
+		  // Je doit passer par l'App GitHub sur le Mac pour que cela marche
 		  
 		  
 		End Sub
