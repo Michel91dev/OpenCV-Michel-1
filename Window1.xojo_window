@@ -773,6 +773,8 @@ End
 		  
 		  // voyons si cela s'upload sur GitHub
 		  // Je doit passer par l'App GitHub sur le Mac pour que cela marche
+		  Var a As Integer
+		  a=1
 		  
 		  
 		End Sub
