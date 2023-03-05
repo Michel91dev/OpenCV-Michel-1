@@ -773,6 +773,9 @@ End
 		  
 		  // voyons si cela s'upload sur GitHub
 		  // Je doit passer par l'App GitHub sur le Mac pour que cela marche
+		  // Il semble y avoir un petit délai entre le Comit et le faire voir sur la version GitHub en ligne le changement
+		  
+		  
 		  Var a As Integer
 		  a=1
 		  
