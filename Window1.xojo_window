@@ -153,7 +153,7 @@ Begin Window Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
+      Width           =   178
    End
    Begin PushButton bBlur
       AllowAutoDeactivate=   True
@@ -169,7 +169,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   339
+      Left            =   455
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -201,7 +201,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   339
+      Left            =   455
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -761,6 +761,35 @@ Begin Window Window1
       Visible         =   True
       Width           =   80
    End
+   Begin Slider Slider1
+      AllowAutoDeactivate=   True
+      AllowLiveScrolling=   False
+      Enabled         =   True
+      Height          =   23
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   232
+      LineStep        =   1
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumValue    =   100
+      MinimumValue    =   1
+      PageStep        =   20
+      Scope           =   2
+      TabIndex        =   24
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TickMarkStyle   =   0
+      Tooltip         =   ""
+      Top             =   91
+      Transparent     =   False
+      Value           =   100
+      Visible         =   True
+      Width           =   186
+   End
 End
 #tag EndWindow
 
@@ -974,11 +1003,21 @@ End
 #tag Events bResize
 	#tag Event
 		Sub Action()
-		  If reference=Nil Then Return
-		  Var scale As Double=.5
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  
+		  Var scale As Double
+		  scale = Slider1.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
+		  
 		  Var scaledSize As New openCV.CVCSize(reference.Width*scale, reference.Height*Scale)
-		  reference2= New openCV.CVCMat
+		  
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
 		  openCV.imgProc.CVCresize(reference, reference2, scaledSize, 0.0, 0.0, openCV.InterpolationFlags.Area)
+		  // openCV.imgProc.CVCresize(source as CVCMat, dest as CVCMat, dSize as CVCSize, fx as double, fy as double, interpolation as interpolationFlags)
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
