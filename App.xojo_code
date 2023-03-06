@@ -2,6 +2,10 @@
 Protected Class App
 Inherits Application
 	#tag Note, Name = A LIRE GENERAL
+		2023 0306 ⚠️ il faut que XOJO (l'application) mais aussi le build soir en Rosetta. 
+		Je change donc les options de build en *INTEL*  pour éviter les problème tant que la
+		 bibliothèque "libOpenCVC.dylib" n'existera pas en version M2 (donc ARM)
+		
 		2023 0305
 		Je prends conscience que le code figure dans les codes externe, ce que je trouve bien
 		A l'avenir je continuera à programmer de la sorte car le code est tout ensemble dans un même fichier
