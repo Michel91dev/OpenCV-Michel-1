@@ -341,7 +341,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   59
+      Top             =   71
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -768,17 +768,18 @@ End
 	#tag Event
 		Sub Open()
 		  LoadImage // C'est moi qui le rajoute ici comme cela je n'ai pas à cliquer sur le bouton à chaque fois
-
+		  
 		  mchargeImageDuCanvas // 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
-
-		  // Je doit passer par l'App GitHub sur le Mac pour que cela s'upload sur GitHub
+		  
+		  // voyons si cela s'upload sur GitHub
+		  // Je doit passer par l'App GitHub sur le Mac pour que cela marche
 		  // Il semble y avoir un petit délai entre le Comit et le faire voir sur la version GitHub en ligne le changement
-
-
+		  
+		  
 		  Var a As Integer
 		  a=1
-
-
+		  
+		  
 		End Sub
 	#tag EndEvent
 
@@ -787,21 +788,21 @@ End
 		Private Sub faitListeDeFichiers()
 		  // Cet algorithme était appelé à l'ouverture de Window dans le Handler "Open()" et ralentissait l'ouverture
 		  // du logiciel
-
+		  
 		  // Ne voyant pas l'intérêt de laisse ceci à l'ouverture donc
 		  // >> je le déplace dans un méthode
-
-
+		  
+		  
 		  // Ceci prend du temps car cet algo appelé à chaque fois que le programme se lance semble
 		  // lire tout le dossier "images" et ses sous-dossiers
 		  // je comprends qu'il fait la liste de tous les fichiers dans images.
 		  // Cet algo semble très optimisé, je n'ai pas l'habitude des dictionnaires mais cela a l'air très puissant.
-
-
-
+		  
+		  
+		  
 		  imageResources=New Dictionary // voir la doc de Xojo mais c'est une liste de Pair
 		  Var fr As FolderItem=SpecialFolder.Resource("images")
-
+		  
 		  // pour chaque fichier qui est dans le dossier "images"
 		  For Each ff As FolderItem In fr.Children             // ⚠️ le "in" est très interessant, voir Doc Xojo
 		    Var ffile() As String=ff.Name.Split(".")        // Split est aussi très interessant pour éclater le str en autant de str délimité par "." ici
@@ -821,7 +822,7 @@ End
 		Private Function loadFromResource(resName as String) As FolderItem
 		  Var path As String=imageResources.Lookup(resName.Lowercase, "")
 		  If path.IsEmpty Then Return Nil
-
+		  
 		  Var f As FolderItem
 		  Try
 		    f=New FolderItem(path, FolderItem.PathModes.Native)
@@ -878,20 +879,20 @@ End
 		Private Sub mchargeImageDuCanvas()
 		  // ce code était dans le bouton Picture de Windows1
 		  // et je préfère l'appeler par défaut, tout en le mettant ici dans une Méthode séparée
-
+		  
 		  If reference<>Nil Then
-
-
+		    
+		    
 		    // La Properties currentImage sera utilisée dans le Handler Paint de Canvas1
 		    currentImage=reference.image
 		  End If
-
-
+		  
+		  
 		  // ceci figurait en commentaires dans le fichier originel downloadé de GitHub
 		  'Var f As FolderItem=SpecialFolder.Desktop.Child("prova.png")
 		  'Var ok As Boolean=openCV.Codecs.imwrite(f.NativePath, reference)
 		  'Break
-
+		  
 		End Sub
 	#tag EndMethod
 
@@ -955,7 +956,7 @@ End
 	#tag Event
 		Sub Action()
 		  LoadImage
-
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -966,7 +967,7 @@ End
 		  openCV.HighGui.imgShow("source", reference)
 		  openCV.HighGui.waitKey(0)
 		  openCV.HighGui.DestroyAllWindows
-
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -985,15 +986,15 @@ End
 	#tag Event
 		Sub Action()
 		  // Marche bien, interesssant
-
+		  
 		  If reference=Nil Then Return
-
+		  
 		  Var blurSize As New openCV.CVCSize(0, 0) // la doc n'est pas prolixe 0,0 doit vouloir dire la taille par défaut
 		  //openCV.imgProc.CVCGaussianBlur(reference, reference, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
 		  reference2=openCV.imgProc.CVCGaussianBlur(reference, blurSize, 3.0, 3.0, openCV.BorderTypes.Default) //🔴
 		  currentImage=reference2.image
-
-
+		  
+		  
 		  //La doc :
 		  //Blurs an image Using a Gaussian filter.
 		  //
@@ -1007,24 +1008,24 @@ End
 		  //sigmaY    Gaussian kernel standard deviation In Y direction; If sigmaY Is zero, it Is set To be equal To sigmaX, If both sigmas are zeros, they are computed from ksize.width And ksize.height, respectively (see getGaussianKernel For details); To fully control the result regardless Of possible future modifications Of all this semantics, it Is recommended To specify all Of ksize, sigmaX, And sigmaY.
 		  //borderType    pixel extrapolation method, see BorderTypes. BORDER_WRAP Is Not supported.
 		  //
-
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
 #tag Events bShow1
 	#tag Event
 		Sub Action()
-
+		  
 		  If reference2<>Nil Then
 		    openCV.HighGui.imgShow("source", reference2)  // Ouvre une fenêtre nouvelle avec l'image - cv.imshow( winname, mat ) - ⚠️ imhow et imGshow
 		    openCV.HighGui.waitKey(0) // attend qu'on appuie sur une touche (voir doc ci-dessous)
-
+		    
 		    openCV.HighGui.DestroyAllWindows // ferme les fenêtre mais pas celle de l'application
 		  Else
 		    MessageBox "No ref2"
 		  End If
-
-
+		  
+		  
 		  //Doc de waitKey()
 		  //Waits For a pressed key.
 		  //The Function waitKey waits For a key Event infinitely (when 𝚍𝚎𝚕𝚊𝚢≤0 ) Or For delay milliseconds,
@@ -1040,20 +1041,20 @@ End
 		Sub Action()
 		  Var f As FolderItem=SpecialFolder.Resource("images").Child("starry_night.jpeg")
 		  Var image As openCV.CVCMat=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Color)
-
+		  
 		  // resize the image
 		  Var scale As Double= 0.5
 		  Var scaledSize As New openCV.CVCSize(image.Width*scale, image.Height*scale)
 		  Var smaller As openCV.CVCMat=openCV.imgProc.CVCresize(image, scaledSize,  0.0, 0.0, openCV.InterpolationFlags.Area)
-
+		  
 		  // convert to grayscale
 		  Var gray As openCV.CVCMat=openCV.imgProc.CVCCvtColor(smaller, openCV.ColorConversionCodes.Rgb2gray, 0)
-
+		  
 		  // apply gaussian blur
 		  Var blurSize As New openCV.CVCSize(0, 0)
 		  Var blur As openCV.CVCMat=openCV.imgProc.CVCGaussianBlur(gray, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
-
-
+		  
+		  
 		  // apply edge detection
 		  Var canny As openCV.CVCMat=openCV.imgProc.CVCCanny(blur, 125.0, 175.0, 3, False)
 		  show("canny", canny)
@@ -1072,10 +1073,10 @@ End
 		    MessageBox "Cannot open video stream from camera"
 		    Return
 		  End If
-
+		  
 		  Var faces As New openCV.CVCRectVector
 		  Var eyes As New openCV.CVCRectVector
-
+		  
 		  Var faceCascade As New openCV.CVCCascadeClassifier
 		  Var eyeCascade As New openCV.CVCCascadeClassifier
 		  Var fdata As FolderItem=SpecialFolder.Resource("data")
@@ -1088,7 +1089,7 @@ End
 		    MessageBox "Cannot access data"
 		    Return
 		  End If
-
+		  
 		  // load pre-trained classifiers
 		  Var ok As Boolean=faceCascade.Load(fdata.Child("haarcascade_frontalface_default.xml"))
 		  ok=ok And eyeCascade.Load(fdata.Child("haarcascade_eye.xml"))
@@ -1096,7 +1097,7 @@ End
 		    MessageBox "Cannot load classifiers"
 		    Return
 		  End If
-
+		  
 		  // detect faces 🔴⚠️ Ici c'est interressant pour moi
 		  Var cSize As New openCV.CVCSize(0, 0)
 		  #If False
@@ -1121,14 +1122,14 @@ End
 		        System.DebugLog "point2:"+point2.toString
 		        //point2.x=roiRect.x+roiRect.width
 		        //point2.y=roiRect.y+roiRect.height
-
+		        
 		        Var scalarColor As cvcScalar=Color.Green.toScalar
 		        'scalarColor.v0=255
 		        'scalarColor.v1=0
 		        'scalarColor.v2=0
 		        'scalarColor.v3=255
 		        openCV.imgProc.Rectangle(frame, point1, point2, scalarColor, 2, openCV.LineTypes.lineAA, -1)
-
+		        
 		        // detect eyes in face ROI
 		        eyeCascade.DetectMultiScale(roiGray, eyes, 1.1, 3, 0, cSize, cSize)
 		        Var ne As Integer=eyes.count
@@ -1148,14 +1149,14 @@ End
 		          'scalarColor.v1=0
 		          'scalarColor.v2=255
 		          'scalarColor.v3=255
-
+		          
 		          openCV.imgProc.Rectangle(roiSrc, Point1e, Point2e, scalarColorE, 1, openCV.LineTypes.Line4, 10)
 		        Next
 		      Next
 		      currentImage=frame.image
 		      //openCV.HighGui.imgShow("Object Detection", frame)
 		    End If
-
+		    
 		    'openCV.HighGui.waitKey(0)
 		    'openCV.HighGui.DestroyAllWindows
 		  #Else
@@ -1170,10 +1171,10 @@ End
 		      Next
 		      currentImage=frame.image
 		    End If
-
+		    
 		  #EndIf
-
-
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1189,7 +1190,7 @@ End
 		    MessageBox "Cannot open video stream from camera, retry now"
 		    Return
 		  End If
-
+		  
 		  Var frame As New openCV.CVCMat
 		  If videoStream.read(frame) Then
 		    //show("VideoFrame", frame)
@@ -1201,7 +1202,7 @@ End
 #tag Events PushButton3
 	#tag Event
 		Sub Action()
-
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1209,19 +1210,19 @@ End
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
 		  // g est le Graphics
-
+		  
 		  If currentImage=Nil Then Return // affectée lors du Load de l'image
-
+		  
 		  // il faut que l'image rentre dans le g (Graphics) de Canvas1
 		  Var s As Double=Min(g.Width/currentImage.Width, g.Height/currentImage.Height) // Fonction min() intéressante
 		  Var w, h As Double // width et height
 		  If s>1.0 Then s=1.0
 		  w=currentImage.Width*s
 		  h=currentImage.Height*s
-
+		  
 		  // affiche la Picture à oa bonne dimension
 		  g.DrawPicture currentImage, 0, 0, w, h, 0, 0, currentImage.Width, currentImage.Height
-
+		  
 		  // rects : je ne comprends ce qu'est ce tableau de Pair défini en  Properties de Window1
 		  If rects.Count>0 Then
 		    For i As Integer=0 To rects.LastIndex // on parcours tout le tableau de rects()
@@ -1252,10 +1253,10 @@ End
 		    Var m As MemoryBlock=v.Data
 		    Var mx1 As Integer=m.Int32Value(0)
 		    Var mx2 As Integer=m.Int32Value(4)
-
+		    
 		    Break
 		  End If
-
+		  
 		  If False Then
 		    //Test float vector: is single vector
 		    Var v As New openCV.CVCFloatVector
@@ -1270,7 +1271,7 @@ End
 		    Var m As MemoryBlock=v.Data
 		    Var mx1 As Single=m.SingleValue(0)
 		    Var mx2 As Single=m.SingleValue(4)
-
+		    
 		    Break
 		  End If
 		  If False Then
@@ -1294,7 +1295,7 @@ End
 		    Var m As MemoryBlock=v.Data
 		    Var mx1 As Integer=m.UInt8Value(0)
 		    Var mx2 As Integer=m.UInt8Value(1)
-
+		    
 		    Break
 		  End If
 		  If False Then  //Test the imEncode
@@ -1354,7 +1355,7 @@ End
 		      r.height=40
 		      v.Add r
 		      Var xr As Rect=New rect(1000, 2000, 4000, 128)
-
+		      
 		      v.Add xr
 		      Var n As Integer=v.Count
 		      Var vr1 As CVCRectStructure=v.RowAts(0)
@@ -1374,11 +1375,11 @@ End
 		  Var f As FolderItem=loadFromResource(sampleImage.RowTagAt(sampleImage.SelectedRowIndex))
 		  If f=Nil Then Return
 		  Var src As openCV.CVCMat=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Unchanged)
-
+		  
 		  currentImage=src.image
 		  Var startTime As Double=System.Microseconds
-
-
+		  
+		  
 		  Var faceCascade As New openCV.CVCCascadeClassifier
 		  Var eyeCascade As New openCV.CVCCascadeClassifier
 		  Var fdata As FolderItem=SpecialFolder.Resource("data")
@@ -1398,11 +1399,11 @@ End
 		    MessageBox "Cannot load classifiers"
 		    Return
 		  End If
-
+		  
 		  Var cSize As New openCV.CVCSize(0, 0)
 		  Var gray As openCV.CVCMat=openCV.imgProc.CVCCvtColor(src, openCV.ColorConversionCodes.Rgb2gray, 0)
 		  currentImage=gray.image
-
+		  
 		  Var faces As New openCV.CVCRectVector
 		  faceCascade.DetectMultiScale(gray, faces, 1.1, 3, 0, cSize, cSize)
 		  Var n As Integer=faces.Count-1
@@ -1410,7 +1411,7 @@ End
 		  Var rr() As Rect
 		  Var ee() As Rect
 		  For i As Integer=0 To n
-
+		    
 		    Var roiRect As openCV.CVCRect =faces.RowAt(i)
 		    Var r As rect=roiRect
 		    Var roiGray As openCV.CVCMat=gray.Roi(roiRect)
@@ -1419,12 +1420,12 @@ End
 		    System.DebugLog "point1:"+point1.toString
 		    Var Point2 As openCV.CVCPoint=roiRect.RightBottom
 		    System.DebugLog "point2:"+point2.toString
-
+		    
 		    Var scalarColor As cvcScalar=Color.Green.toScalar
 		    openCV.imgProc.Rectangle2(roiSrc, roiRect, scalarColor, -1)
 		    //openCV.imgProc.Rectangle(gray, point1, point2, scalarColor, 2, openCV.LineTypes.lineAA, -1)
 		    rr.Add r
-
+		    
 		    Var eyes As New openCV.CVCRectVector
 		    eyeCascade.DetectMultiScale(roiGray, eyes, 1.1, 3, 0, cSize, cSize)
 		    Var ne As Integer=eyes.count-1
@@ -1447,7 +1448,7 @@ End
 		  currentImage=src.image
 		  rects.Add Color.Yellow:rr
 		  rects.Add Color.Red:ee
-
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1462,35 +1463,35 @@ End
 		    Var f As FolderItem=loadFromResource(sampleImage.RowTagAt(sampleImage.SelectedRowIndex))
 		    If f=Nil Then Return
 		    Var image As openCV.CVCMat=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Unchanged)
-
+		    
 		    currentImage=image.image
 		    Var ksize As Integer=sobelParam(0).Value*2-1 //ksize must be odd
 		    ksize=min(ksize, 31) //max ksize value is 31
 		    ksize=max(ksize, 1) //min ksize is 1
 		    Var scale As Integer=sobelParam(1).Value
 		    Var delta As Integer=sobelParam(2).Value
-
-
+		    
+		    
 		    Var depth As openCV.depths=openCV.Depths.CV16S
 		    Var src As New openCV.CVCMat
 		    openCV.imgProc.CVCGaussianBlur(image, src, New openCV.CVCSize(3, 3), 0, 0, openCV.BorderTypes.Default)
-
+		    
 		    Var srcGray As New openCV.CVCMat
 		    openCV.imgProc.CVCCvtColor(src, srcGray, openCV.ColorConversionCodes.Bgr2gray, 0)
-
+		    
 		    Var gradX As New openCV.CVCMat
 		    Var gradY As New openCV.CVCMat
 		    Var absGradX As New openCV.CVCMat
 		    Var absGradY As New openCV.CVCMat
-
+		    
 		    openCV.imgProc.CVCSobel(srcGray, gradX, CType(depth, Integer), 1, 0, ksize, scale, delta, openCV.BorderTypes.Default)
-
+		    
 		    openCV.imgProc.CVCSobel(srcGray, gradY, CType(depth, Integer), 1, 0, ksize, scale, delta, openCV.BorderTypes.Default)
-
+		    
 		    openCV.Core.convertScaleAbs(gradX, absGradX, 2, 2)
-
+		    
 		    openCV.Core.convertScaleAbs(gradY, absGradY, 2, 2)
-
+		    
 		    Var grad As New openCV.CVCMat
 		    openCV.Core.addWeighted(absGradX, .5, absGradY, .5, .5, grad, 0)
 		    currentImage=grad.image
