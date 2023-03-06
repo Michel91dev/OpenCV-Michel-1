@@ -795,7 +795,7 @@ End
 		Sub Open()
 		  LoadImage // C'est moi qui le rajoute ici comme cela je n'ai pas à cliquer sur le bouton à chaque fois
 
-		  mchargeImageDuCanvas // 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
+		  mchargeImageDuCanvas // 🙂 !! 🙂 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
 
 		  // voyons si cela s'upload sur GitHub
 		  // Je doit passer par l'App GitHub sur le Mac pour que cela marche
@@ -813,7 +813,7 @@ End
 	#tag Method, Flags = &h21
 		Private Sub faitListeDeFichiers()
 		  // Cet algorithme était appelé à l'ouverture de Window dans le Handler "Open()" et ralentissait l'ouverture
-		  // du logiciel 😀
+		  // du logiciel
 
 		  // Ne voyant pas l'intérêt de laisse ceci à l'ouverture donc
 		  // >> je le déplace dans un méthode
