@@ -1,11 +1,11 @@
 #tag Window
 Begin Window Window1
    Backdrop        =   0
-   BackgroundColor =   &cFFFFFF00
+   BackgroundColor =   &c76767600
    Composite       =   False
    DefaultLocation =   0
    FullScreen      =   False
-   HasBackgroundColor=   False
+   HasBackgroundColor=   True
    HasCloseButton  =   True
    HasFullScreenButton=   False
    HasMaximizeButton=   True
@@ -24,6 +24,35 @@ Begin Window Window1
    Type            =   0
    Visible         =   True
    Width           =   804
+   Begin GroupBox GroupBox1
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Caption         =   "                Scale Image"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   66
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   232
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   25
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   38
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   211
+   End
    Begin PushButton bLoad
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -50,7 +79,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   27
+      Top             =   12
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -69,7 +98,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   140
+      Left            =   155
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -85,7 +114,7 @@ Begin Window Window1
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   27
+      Top             =   12
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -122,38 +151,6 @@ Begin Window Window1
       Underline       =   False
       Visible         =   True
       Width           =   80
-   End
-   Begin PushButton bResize
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Resize"
-      Default         =   False
-      Enabled         =   False
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   240
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   3
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   59
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   178
    End
    Begin PushButton bBlur
       AllowAutoDeactivate=   True
@@ -761,14 +758,14 @@ Begin Window Window1
       Visible         =   True
       Width           =   80
    End
-   Begin Slider Slider1
+   Begin Slider Slider_Resize
       AllowAutoDeactivate=   True
       AllowLiveScrolling=   False
       Enabled         =   True
       Height          =   23
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   232
+      Left            =   246
       LineStep        =   1
       LockBottom      =   False
       LockedInPosition=   False
@@ -784,7 +781,7 @@ Begin Window Window1
       TabStop         =   True
       TickMarkStyle   =   0
       Tooltip         =   ""
-      Top             =   91
+      Top             =   71
       Transparent     =   False
       Value           =   100
       Visible         =   True
@@ -891,14 +888,14 @@ End
 		  If reference=Nil Then
 		    Label1.Text="No image loaded!"
 		    bShow.Enabled=False
-		    bResize.Enabled=False
+		    Slider_Resize.Enabled=False
 		    bBlur.Enabled=False
 		  Else
 		    Var h As Integer=reference.Height
 		    Var w As Integer=reference.Width
 		    Label1.Text="Image loaded ("+w.ToString+"x"+h.toString+")"
 		    bShow.Enabled=True
-		    bResize.Enabled=True
+		    Slider_Resize.Enabled=True
 		    bBlur.Enabled=True
 		  End If
 		End Sub
@@ -996,27 +993,6 @@ End
 		  openCV.HighGui.imgShow("source", reference)
 		  openCV.HighGui.waitKey(0)
 		  openCV.HighGui.DestroyAllWindows
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events bResize
-	#tag Event
-		Sub Action()
-		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
-		  
-		  Var scale As Double
-		  scale = Slider1.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
-		  
-		  Var scaledSize As New openCV.CVCSize(reference.Width*scale, reference.Height*Scale)
-		  
-		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
-		  
-		  openCV.imgProc.CVCresize(reference, reference2, scaledSize, 0.0, 0.0, openCV.InterpolationFlags.Area)
-		  // openCV.imgProc.CVCresize(source as CVCMat, dest as CVCMat, dSize as CVCSize, fx as double, fy as double, interpolation as interpolationFlags)
-		  
-		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
-		  
 		  
 		End Sub
 	#tag EndEvent
@@ -1552,6 +1528,27 @@ End
 	#tag Event
 		Sub Action()
 		  wCore.show
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Slider_Resize
+	#tag Event
+		Sub ValueChanged()
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  
+		  Var scale As Double
+		  scale = Slider_Resize.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
+		  
+		  Var scaledSize As New openCV.CVCSize(reference.Width*scale, reference.Height*Scale)
+		  
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
+		  openCV.imgProc.CVCresize(reference, reference2, scaledSize, 0.0, 0.0, openCV.InterpolationFlags.Area)
+		  // openCV.imgProc.CVCresize(source as CVCMat, dest as CVCMat, dSize as CVCSize, fx as double, fy as double, interpolation as interpolationFlags)
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

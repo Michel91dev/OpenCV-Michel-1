@@ -51,7 +51,7 @@ Begin Window wCore
       Visible         =   True
       Width           =   560
    End
-   Begin Slider Slider1
+   Begin Slider Slider_Resize
       AllowAutoDeactivate=   True
       AllowLiveScrolling=   False
       Enabled         =   True
@@ -286,7 +286,7 @@ End
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
 		    images.Add openCV.Codecs.imRead(pTest.NativePath, openCV.ImReadModes.Unchanged)
 		    images.add New openCV.CVCMat
-		    Var alpha As Double=Slider1.Value/Slider1.MaximumValue
+		    Var alpha As Double=Slider_Resize.Value/Slider_Resize.MaximumValue
 		    Var beta As Double=1-alpha
 		    openCV.Core.AddWeighted(images(0), alpha, images(1), beta, 0.0, images(2))
 		    Canvas1.Invalidate
