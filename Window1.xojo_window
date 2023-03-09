@@ -787,6 +787,70 @@ Begin Window Window1
       Visible         =   True
       Width           =   186
    End
+   Begin PushButton PushButton_Gray
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Gris"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   559
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   26
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   91
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_Edge
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Edge Detection"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   503
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   27
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   27
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   124
+   End
 End
 #tag EndWindow
 
@@ -1553,6 +1617,39 @@ End
 		  
 		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
 		  
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Gray
+	#tag Event
+		Sub Action()
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
+		  
+		  
+		  // convert to grayscale
+		  reference2=openCV.imgProc.CVCCvtColor(reference, openCV.ColorConversionCodes.Rgb2gray, 0)
+		  
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Edge
+	#tag Event
+		Sub Action()
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
+		  // apply edge detection - Dans le bouton Canny originel il y a ait un Blur avant de faire le Edge Detection, je ne l'ai pas laissé pour que le code soit plus simple à lire
+		  reference2= openCV.imgProc.CVCCanny(reference, 125.0, 175.0, 3, False)
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
 		  
 		End Sub
 	#tag EndEvent

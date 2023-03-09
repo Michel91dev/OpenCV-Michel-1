@@ -43,6 +43,15 @@ Inherits Application
 	#tag EndNote
 
 	#tag Note, Name = Modifs de Code
+		2023 0309 
+		Je revois les bouton un par un car ils sont difficles à comprendre et sans aucun effort du dev pour aider à comprendre le code
+		C'est incroyable le peu d'effort de documentation. En fait inexistant et décourageant.
+		
+		Je split le Bouton Canny ( https://docs.opencv.org/4.x/da/d22/tutorial_py_canny.html ) en  2 boutons "Gris" et "Edge Detect" avec un petit code simple 
+		et plus didactique
+		
+		▶️ Il faudra que je crée la Globale reference2 au lieu de la créer dans chaque bouton, le code serait plus lisible
+		
 		2023 0305
 		J'ai éliminé le code long à executé dont je ne voyais pas l'intérêt qui parse tout le dossier "images" et qui en fait une liste
 		dans un Dictionnary.
