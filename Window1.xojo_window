@@ -20,10 +20,39 @@ Begin Window Window1
    MinimumHeight   =   64
    MinimumWidth    =   64
    Resizeable      =   True
-   Title           =   "Untitled"
+   Title           =   "Window1"
    Type            =   0
    Visible         =   True
    Width           =   774
+   Begin GroupBox GroupBox2
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Caption         =   "Canny Edge Detection"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   66
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   102
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   33
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   "Use Slider to play"
+      Top             =   44
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   216
+   End
    Begin GroupBox GroupBox1
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -36,7 +65,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   232
+      Left            =   330
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -47,7 +76,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   38
+      Top             =   44
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -118,7 +147,7 @@ Begin Window Window1
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   440
+      Width           =   288
    End
    Begin PushButton bShow
       AllowAutoDeactivate=   True
@@ -134,7 +163,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   140
+      Left            =   102
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -146,7 +175,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   59
+      Top             =   122
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -166,7 +195,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   455
+      Left            =   570
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -178,7 +207,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   59
+      Top             =   44
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -188,7 +217,7 @@ Begin Window Window1
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
-      Caption         =   "Show"
+      Caption         =   "Original Picture"
       Default         =   False
       Enabled         =   True
       FontName        =   "System"
@@ -198,7 +227,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   455
+      Left            =   570
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -210,43 +239,11 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   91
+      Top             =   76
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   80
-   End
-   Begin PushButton bCanny
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Canny"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   20
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   6
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   150
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   80
+      Width           =   184
    End
    Begin PushButton PushButton2
       AllowAutoDeactivate=   True
@@ -262,7 +259,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   204
+      Left            =   102
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -274,7 +271,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   150
+      Top             =   188
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -294,7 +291,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   112
+      Left            =   20
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -306,7 +303,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   150
+      Top             =   188
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -326,7 +323,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   20
+      Left            =   10
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -338,7 +335,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   71
+      Top             =   123
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -740,7 +737,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   547
+      Left            =   10
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -752,7 +749,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   59
+      Top             =   150
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -765,7 +762,7 @@ Begin Window Window1
       Height          =   23
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   246
+      Left            =   344
       LineStep        =   1
       LockBottom      =   False
       LockedInPosition=   False
@@ -781,7 +778,7 @@ Begin Window Window1
       TabStop         =   True
       TickMarkStyle   =   1
       Tooltip         =   ""
-      Top             =   71
+      Top             =   77
       Transparent     =   False
       Value           =   100
       Visible         =   True
@@ -801,7 +798,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   559
+      Left            =   674
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -813,7 +810,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   91
+      Top             =   44
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -833,7 +830,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   503
+      Left            =   618
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -845,11 +842,171 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   27
+      Top             =   12
       Transparent     =   False
       Underline       =   False
       Visible         =   True
       Width           =   124
+   End
+   Begin Slider Slider_threshold1
+      AllowAutoDeactivate=   True
+      AllowLiveScrolling=   True
+      Enabled         =   True
+      Height          =   23
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   112
+      LineStep        =   1
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumValue    =   250
+      MinimumValue    =   1
+      PageStep        =   20
+      Scope           =   2
+      TabIndex        =   28
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TickMarkStyle   =   0
+      Tooltip         =   ""
+      Top             =   73
+      Transparent     =   False
+      Value           =   1
+      Visible         =   True
+      Width           =   100
+   End
+   Begin Slider Slider_threshold2
+      AllowAutoDeactivate=   True
+      AllowLiveScrolling=   True
+      Enabled         =   True
+      Height          =   23
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   211
+      LineStep        =   1
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumValue    =   250
+      MinimumValue    =   1
+      PageStep        =   20
+      Scope           =   2
+      TabIndex        =   29
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TickMarkStyle   =   0
+      Tooltip         =   ""
+      Top             =   73
+      Transparent     =   False
+      Value           =   54
+      Visible         =   True
+      Width           =   100
+   End
+   Begin PushButton bCanny1
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Canny"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   112
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   30
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   220
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin Label Label_Threshold1
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   140
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   31
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Threshold1"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   84
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
+   End
+   Begin Label Label_Threshold2
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   240
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   32
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Threshold2"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   84
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   100
    End
 End
 #tag EndWindow
@@ -857,18 +1014,15 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
+		  // Initialisations
+		  
+		  
+		  Slider_threshold1.Value = 1
+		  Slider_threshold2.Value = 80 // assez empirique
+		  
 		  LoadImage // C'est moi qui le rajoute ici comme cela je n'ai pas à cliquer sur le bouton à chaque fois
 		  
-		  mchargeImageDuCanvas // 🙂 !! 🙂 🙂 J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
-		  
-		  // voyons si cela s'upload sur GitHub
-		  // Je doit passer par l'App GitHub sur le Mac pour que cela marche
-		  // Il semble y avoir un petit délai entre le Comit et le faire voir sur la version GitHub en ligne le changement
-		  
-		  
-		  Var a As Integer
-		  a=1
-		  
+		  mchargeImageDuCanvas //  J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
 		  
 		End Sub
 	#tag EndEvent
@@ -986,6 +1140,32 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h21
+		Private Sub m_Contours()
+		  // Mon Code
+		  
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  
+		  Var reference2 As openCV.CVCMat
+		  
+		  // convert to grayscale
+		  Var grayMAT As openCV.CVCMat
+		  grayMAT = openCV.imgProc.CVCCvtColor(reference, openCV.ColorConversionCodes.Rgb2gray, 0)
+		  
+		  // apply gaussian blur
+		  Var blurSize As New openCV.CVCSize(0, 0)
+		  Var blur As openCV.CVCMat
+		  Blur = openCV.imgProc.CVCGaussianBlur(grayMAT, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
+		  
+		  
+		  // apply edge detection
+		  reference2 = openCV.imgProc.CVCCanny(blur, threshold1, threshold2, 3, False)
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
+		  
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h1
 		Protected Sub Show(title as String, image as openCV.CVCMat)
 		  openCV.HighGui.imgShow(title, image)
@@ -1037,6 +1217,14 @@ End
 
 	#tag Property, Flags = &h21
 		Private reference2 As openCV.CVCMat
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private threshold1 As Double
+	#tag EndProperty
+
+	#tag Property, Flags = &h21
+		Private threshold2 As Double
 	#tag EndProperty
 
 
@@ -1112,31 +1300,6 @@ End
 		  //Not wait exactly delay ms, it will wait at least delay ms, depending on what Else Is running on
 		  // your computer at that time. It returns the code Of the pressed key Or -1 If no key was pressed
 		  //before the specified time had elapsed.
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events bCanny
-	#tag Event
-		Sub Action()
-		  Var f As FolderItem=SpecialFolder.Resource("images").Child("starry_night.jpeg")
-		  Var image As openCV.CVCMat=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Color)
-		  
-		  // resize the image
-		  Var scale As Double= 0.5
-		  Var scaledSize As New openCV.CVCSize(image.Width*scale, image.Height*scale)
-		  Var smaller As openCV.CVCMat=openCV.imgProc.CVCresize(image, scaledSize,  0.0, 0.0, openCV.InterpolationFlags.Area)
-		  
-		  // convert to grayscale
-		  Var gray As openCV.CVCMat=openCV.imgProc.CVCCvtColor(smaller, openCV.ColorConversionCodes.Rgb2gray, 0)
-		  
-		  // apply gaussian blur
-		  Var blurSize As New openCV.CVCSize(0, 0)
-		  Var blur As openCV.CVCMat=openCV.imgProc.CVCGaussianBlur(gray, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
-		  
-		  
-		  // apply edge detection
-		  Var canny As openCV.CVCMat=openCV.imgProc.CVCCanny(blur, 125.0, 175.0, 3, False)
-		  show("canny", canny)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1651,6 +1814,56 @@ End
 		  
 		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Slider_threshold1
+	#tag Event
+		Sub ValueChanged()
+		  // par défaut 85 pour threshold1
+		  
+		  threshold1 = me.Value
+		  Label_Threshold1.Text = threshold1.ToString
+		  
+		  m_Contours // J'appelle mon code
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Slider_threshold2
+	#tag Event
+		Sub ValueChanged()
+		  //  par défaut 175 pour threshold2
+		  
+		  threshold2 = me.Value
+		  Label_Threshold2.Text = threshold2.ToString
+		  
+		  
+		  m_Contours // J'appelle mon code
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bCanny1
+	#tag Event
+		Sub Action()
+		  Var f As FolderItem=SpecialFolder.Resource("images").Child("starry_night.jpeg") // mettre l'image dans le dossier "images" du ~user
+		  Var image As openCV.CVCMat=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Color)
+		  
+		  // resize the image
+		  Var scale As Double= 0.8
+		  Var scaledSize As New openCV.CVCSize(image.Width*scale, image.Height*scale)
+		  Var smaller As openCV.CVCMat=openCV.imgProc.CVCresize(image, scaledSize,  0.0, 0.0, openCV.InterpolationFlags.Area) 
+		  
+		  // convert to grayscale
+		  Var gray As openCV.CVCMat=openCV.imgProc.CVCCvtColor(smaller, openCV.ColorConversionCodes.Rgb2gray, 0)
+		  
+		  // apply gaussian blur
+		  Var blurSize As New openCV.CVCSize(0, 0)
+		  Var blur As openCV.CVCMat=openCV.imgProc.CVCGaussianBlur(gray, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
+		  
+		  
+		  // apply edge detection
+		  Var canny As openCV.CVCMat=openCV.imgProc.CVCCanny(blur, 85.0, 175.0, 3, False)
+		  show("canny", canny)
 		End Sub
 	#tag EndEvent
 #tag EndEvents

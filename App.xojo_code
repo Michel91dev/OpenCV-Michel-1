@@ -51,6 +51,7 @@ Inherits Application
 		et plus didactique
 		
 		▶️ Il faudra que je crée la Globale reference2 au lieu de la créer dans chaque bouton, le code serait plus lisible
+		▶️ Faire en sorte qu'on puisse choisir l'image au lieu que ce soit l'image hard-codée
 		
 		2023 0305
 		J'ai éliminé le code long à executé dont je ne voyais pas l'intérêt qui parse tout le dossier "images" et qui en fait une liste
