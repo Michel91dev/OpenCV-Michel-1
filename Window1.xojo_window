@@ -10,7 +10,7 @@ Begin Window Window1
    HasFullScreenButton=   False
    HasMaximizeButton=   True
    HasMinimizeButton=   True
-   Height          =   461
+   Height          =   605
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -23,7 +23,7 @@ Begin Window Window1
    Title           =   "Window1"
    Type            =   0
    Visible         =   True
-   Width           =   774
+   Width           =   928
    Begin GroupBox GroupBox2
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -349,10 +349,10 @@ Begin Window Window1
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   318
+      Height          =   440
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   319
+      Left            =   323
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -363,10 +363,10 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   123
+      Top             =   150
       Transparent     =   True
       Visible         =   True
-      Width           =   435
+      Width           =   589
    End
    Begin PushButton bTest
       AllowAutoDeactivate=   True
@@ -1017,6 +1017,19 @@ End
 		  // Initialisations
 		  
 		  
+		  Window1.Left = 200
+		  Window1.Width =   Screen(0).Width - 2*Window1.Left
+		  
+		  Window1.top = Window1.Left 
+		  Window1.Height = Screen(0).Height - 2*Window1.top
+		  
+		  // A Jeter
+		  // Var L As Integer
+		  // L = Canvas1.Left
+		  // Canvas1.Width = Window1.Width - L
+		  
+		  
+		  
 		  Slider_threshold1.Value = 1
 		  Slider_threshold2.Value = 80 // assez empirique
 		  
@@ -1458,7 +1471,7 @@ End
 		  // il faut que l'image rentre dans le g (Graphics) de Canvas1
 		  Var s As Double=Min(g.Width/currentImage.Width, g.Height/currentImage.Height) // Fonction min() intéressante
 		  Var w, h As Double // width et height
-		  If s>1.0 Then s=1.0
+		  // If s>1.0 Then s=1.0 // initialement : If s>1.0 Then s=1.0
 		  w=currentImage.Width*s
 		  h=currentImage.Height*s
 		  
