@@ -86,7 +86,7 @@ Begin Window Window1
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
-      Caption         =   "Load Image"
+      Caption         =   "Select Image"
       Default         =   False
       Enabled         =   True
       FontName        =   "System"
@@ -149,38 +149,6 @@ Begin Window Window1
       Visible         =   True
       Width           =   288
    End
-   Begin PushButton bShow
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Show"
-      Default         =   False
-      Enabled         =   False
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   102
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   2
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   122
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   80
-   End
    Begin PushButton bBlur
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -212,38 +180,6 @@ Begin Window Window1
       Underline       =   False
       Visible         =   True
       Width           =   80
-   End
-   Begin PushButton bShow1
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Original Picture"
-      Default         =   False
-      Enabled         =   False
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   553
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   5
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   84
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   122
    End
    Begin PushButton PushButton2
       AllowAutoDeactivate=   True
@@ -309,38 +245,6 @@ Begin Window Window1
       Visible         =   True
       Width           =   80
    End
-   Begin PushButton PushButton3
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Picture"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   10
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   10
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   123
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   80
-   End
    Begin Canvas Canvas1
       AllowAutoDeactivate=   True
       AllowFocus      =   False
@@ -367,6 +271,41 @@ Begin Window Window1
       Transparent     =   True
       Visible         =   True
       Width           =   589
+      Begin Label Label_Commentaire
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         DataField       =   ""
+         DataSource      =   ""
+         Enabled         =   True
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   116
+         Index           =   -2147483648
+         InitialParent   =   "Canvas1"
+         Italic          =   False
+         Left            =   665
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         Multiline       =   True
+         Scope           =   2
+         Selectable      =   False
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Text            =   "⚠️ Penser à regarder à droite de la fenêtre\n où je cache les des boutons devenus \ninutiles mais peut-être intéressants à \nconsulter plus tard...\n"
+         TextAlignment   =   0
+         TextColor       =   &cE2CDE900
+         Tooltip         =   ""
+         Top             =   474
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   False
+         Width           =   230
+      End
    End
    Begin PushButton bTest
       AllowAutoDeactivate=   True
@@ -816,38 +755,6 @@ Begin Window Window1
       Visible         =   True
       Width           =   80
    End
-   Begin PushButton PushButton_Edge
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Edge Detection"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   797
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   27
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   12
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   124
-   End
    Begin Slider Slider_threshold1
       AllowAutoDeactivate=   True
       AllowLiveScrolling=   True
@@ -1008,6 +915,99 @@ Begin Window Window1
       Visible         =   True
       Width           =   100
    End
+   Begin GroupBox GroupBox3
+      AllowAutoDeactivate=   False
+      Bold            =   False
+      Caption         =   "Boutons inutiles avec Code Historique (Keep ?)"
+      Enabled         =   False
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   295
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   956
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   34
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   "Boutons inutiles avec Code Historiqu (Keep ?)"
+      Top             =   -24
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   259
+      Begin PushButton bShow
+         AllowAutoDeactivate=   True
+         Bold            =   False
+         Cancel          =   False
+         Caption         =   "Rerence Image"
+         Default         =   False
+         Enabled         =   False
+         FontName        =   "System"
+         FontSize        =   0.0
+         FontUnit        =   0
+         Height          =   20
+         Index           =   -2147483648
+         InitialParent   =   "GroupBox3"
+         Italic          =   False
+         Left            =   1077
+         LockBottom      =   False
+         LockedInPosition=   False
+         LockLeft        =   True
+         LockRight       =   False
+         LockTop         =   True
+         MacButtonStyle  =   0
+         Scope           =   2
+         TabIndex        =   0
+         TabPanelIndex   =   0
+         TabStop         =   True
+         Tooltip         =   ""
+         Top             =   31
+         Transparent     =   False
+         Underline       =   False
+         Visible         =   True
+         Width           =   110
+      End
+   End
+   Begin PushButton PushButton_Edge
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Edge Detection"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   1071
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   36
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   108
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   124
+   End
    Begin PushButton PushButton_Gray1
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -1022,7 +1022,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   828
+      Left            =   1102
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1030,14 +1030,14 @@ Begin Window Window1
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   2
-      TabIndex        =   34
+      TabIndex        =   37
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   44
+      Top             =   140
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   80
    End
    Begin PushButton PushButton_Gray2
@@ -1054,7 +1054,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   828
+      Left            =   1102
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1062,14 +1062,14 @@ Begin Window Window1
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   2
-      TabIndex        =   35
+      TabIndex        =   38
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   76
+      Top             =   172
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   80
    End
    Begin PushButton PushButton_Resource
@@ -1086,7 +1086,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   797
+      Left            =   1071
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1094,15 +1094,47 @@ Begin Window Window1
       LockTop         =   True
       MacButtonStyle  =   0
       Scope           =   2
-      TabIndex        =   36
+      TabIndex        =   39
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   99
+      Top             =   195
       Transparent     =   False
       Underline       =   False
-      Visible         =   True
+      Visible         =   False
       Width           =   111
+   End
+   Begin PushButton bShow1
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Original Picture"
+      Default         =   False
+      Enabled         =   False
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   1071
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   40
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   76
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   False
+      Width           =   122
    End
 End
 #tag EndWindow
@@ -1155,7 +1187,9 @@ End
 		  Slider_threshold1.Value = 1
 		  Slider_threshold2.Value = 80 // assez empirique
 		  
-		  LoadImage // C'est moi qui le rajoute ici comme cela je n'ai pas à cliquer sur le bouton à chaque fois
+		  Var f As  FolderItem
+		  f=SpecialFolder.Resource("images").Child("starry_night.jpeg") // ⚠️ Il faudra que je modifie cette obligation de mettre l'image à plat dans le dossier ~/images  C'est nul
+		  myLoadImage(f) // C'est moi qui le rajoute ici comme cela je n'ai pas à cliquer sur le bouton à chaque fois
 		  
 		  mchargeImageDuCanvas //  J'ai préféré mettre le code dans  une méthode plutôt que dans un bouton"Picture" qu'il fallait cliquer à chaque fois.
 		  
@@ -1218,19 +1252,10 @@ End
 
 	#tag Method, Flags = &h1
 		Protected Sub LoadImage()
-		  //Select a jpg or png
-		  Var ff As FolderItem//=FolderItem.ShowOpenFileDialog(jpegType+pngType)
 		  Var f As FolderItem
-		  If ff=Nil Then
-		    Try
-		      //some special image
-		      f=SpecialFolder.Resource("images").Child("starry_night.jpeg")
-		    Catch
-		      f=Nil
-		    End Try
-		  Else
-		    f=ff
-		  End If
+		  f=SpecialFolder.Resource("images").Child("starry_night.jpeg") // ⚠️ Il faudra que je modifie cette obligation de mettre l'image à plat dans le dossier ~/images  C'est nul
+		  
+		  
 		  If f<>Nil Then
 		    // reference est un Porperties de la fenêtre qui va concerver l'accès à la Matrice de l'image (type OpenCV.CVCMat)
 		    // https://docs.opencv.org/5.x/d3/d63/classcv_1_1Mat.html#details
@@ -1242,12 +1267,10 @@ End
 		    Label1.Text="No image loaded!"
 		    bShow.Enabled=False
 		    Slider_Resize.Enabled=False
-		    bBlur.Enabled=False // Comme l'image a bien été chargée on peut activer le bouton bblur qui par défaut est non sélectionné
+		    bBlur.Enabled=False 
 		  Else
-		    Var h As Integer=reference.Height
-		    Var w As Integer=reference.Width
-		    Label1.Text="Image loaded ("+w.ToString+"x"+h.toString+")"
-		    bShow.Enabled=True
+		    Label1.Text="Image loaded (" + reference.Height.ToString + " / " + reference.Width.ToString + ")"
+		    bShow.Enabled=True  // we can activate the buttons
 		    Slider_Resize.Enabled=True
 		    bBlur.Enabled=True
 		  End If
@@ -1275,6 +1298,32 @@ End
 		End Sub
 	#tag EndMethod
 
+	#tag Method, Flags = &h1
+		Protected Sub myLoadImage(f As FolderItem)
+		  
+		  If f<>Nil Then
+		    // reference est un Porperties de la fenêtre qui va concerver l'accès à la Matrice de l'image (type OpenCV.CVCMat)
+		    // https://docs.opencv.org/5.x/d3/d63/classcv_1_1Mat.html#details
+		    // reference sera utiliser pour manipuler l'image ultérieurement
+		    reference=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Unchanged) // 🔴 important
+		    //reference=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Grayscale) // j'ai testé en nuances de gris pour voir
+		  End If
+		  If reference=Nil Then
+		    Label1.Text="No image loaded!"
+		    bShow.Enabled=False
+		    Slider_Resize.Enabled=False
+		    bBlur.Enabled=False 
+		  Else
+		    Label1.Text="Image loaded (" +  f.Name + " : " + reference.Height.ToString + " / " + reference.Width.ToString + ")"
+		    bShow.Enabled=True  // we can activate the buttons
+		    Slider_Resize.Enabled=True
+		    bBlur.Enabled=True
+		    
+		    // Canvas1. déclencher un refresh
+		  End If
+		End Sub
+	#tag EndMethod
+
 	#tag Method, Flags = &h21
 		Private Sub m_Contours()
 		  // Mon Code
@@ -1282,8 +1331,6 @@ End
 		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
 		  
 		  Var reference2 As openCV.CVCMat
-		  
-		  
 		  
 		  
 		  // convert to grayscale - ▶️ Probablement plus efficace pour repérer les Hedges (contours)
@@ -1296,14 +1343,13 @@ End
 		  blurMat = openCV.imgProc.CVCGaussianBlur(grayMAT, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
 		  
 		  
-		  // apply edge detection
+		  // Apply Canny Edge Detection
 		  reference2 = openCV.imgProc.CVCCanny(blurMat, threshold1, threshold2, 3, False)
 		  
 		  
-		  
+		  // ▶️ Maintenant je le mets à l'échelle en fonction du slider de Zoom
 		  Var scale As Double  // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
 		  scale = Slider_Resize.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
-		  
 		  Var scaledSize As  openCV.CVCSize // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
 		  scaledSize = New openCV.CVCSize (reference2.Width*scale, reference2.Height*Scale) 
 		  
@@ -1386,18 +1432,18 @@ End
 #tag Events bLoad
 	#tag Event
 		Sub Action()
-		  LoadImage
+		  Var f As FolderItem 
+		  // f = Folderitem.ShowOpenFileDialog(FileTypeGroup1.Jpeg)
+		  f = Folderitem.ShowOpenFileDialog("")
 		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events bShow
-	#tag Event
-		Sub Action()
-		  //HIGUI
-		  openCV.HighGui.imgShow("source", reference)
-		  openCV.HighGui.waitKey(0)
-		  openCV.HighGui.DestroyAllWindows
+		  If f Is Nil Then
+		    // user cancelled
+		    Return
+		  End If
+		  
+		  
+		  
+		  myLoadImage(f)
 		  
 		End Sub
 	#tag EndEvent
@@ -1429,30 +1475,6 @@ End
 		  //borderType    pixel extrapolation method, see BorderTypes. BORDER_WRAP Is Not supported.
 		  //
 		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events bShow1
-	#tag Event
-		Sub Action()
-		  
-		  If reference2<>Nil Then
-		    openCV.HighGui.imgShow("source", reference2)  // Ouvre une fenêtre nouvelle avec l'image - cv.imshow( winname, mat ) - ⚠️ imhow et imGshow
-		    openCV.HighGui.waitKey(0) // attend qu'on appuie sur une touche (voir doc ci-dessous)
-		    
-		    openCV.HighGui.DestroyAllWindows // ferme les fenêtre mais pas celle de l'application
-		  Else
-		    MessageBox "No ref2"
-		  End If
-		  
-		  
-		  //Doc de waitKey()
-		  //Waits For a pressed key.
-		  //The Function waitKey waits For a key Event infinitely (when 𝚍𝚎𝚕𝚊𝚢≤0 ) Or For delay milliseconds,
-		  //when it Is positive. Since the OS has a minimum time between switching threads, the Function will
-		  //Not wait exactly delay ms, it will wait at least delay ms, depending on what Else Is running on
-		  // your computer at that time. It returns the code Of the pressed key Or -1 If no key was pressed
-		  //before the specified time had elapsed.
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1591,13 +1613,6 @@ End
 		    //show("VideoFrame", frame)
 		    currentImage=frame.image
 		  End If
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events PushButton3
-	#tag Event
-		Sub Action()
-		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1939,14 +1954,11 @@ End
 		  
 		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
 		  
-		  
-		  
+		  // ▶️ Maintenant je le mets à l'échelle en fonction du slider de Zoom
 		  Var scale As Double  // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
 		  scale = Slider_Resize.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
-		  
 		  Var scaledSize As  openCV.CVCSize // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
 		  scaledSize = New openCV.CVCSize (reference.Width*scale, reference.Height*Scale) 
-		  
 		  
 		  
 		  
@@ -1972,21 +1984,6 @@ End
 		  // convert to grayscale
 		  reference2=openCV.imgProc.CVCCvtColor(reference, openCV.ColorConversionCodes.Rgb2gray, 0)
 		  
-		  
-		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
-		  
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events PushButton_Edge
-	#tag Event
-		Sub Action()
-		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
-		  
-		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
-		  
-		  // apply edge detection - Dans le bouton Canny originel il y a ait un Blur avant de faire le Edge Detection, je ne l'ai pas laissé pour que le code soit plus simple à lire
-		  reference2= openCV.imgProc.CVCCanny(reference, 125.0, 175.0, 3, False)
 		  
 		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
 		  
@@ -2043,6 +2040,32 @@ End
 		End Sub
 	#tag EndEvent
 #tag EndEvents
+#tag Events bShow
+	#tag Event
+		Sub Action()
+		  //HIGUI
+		  openCV.HighGui.imgShow("source", reference)
+		  openCV.HighGui.waitKey(0)
+		  openCV.HighGui.DestroyAllWindows
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Edge
+	#tag Event
+		Sub Action()
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
+		  // apply edge detection - Dans le bouton Canny originel il y a ait un Blur avant de faire le Edge Detection, je ne l'ai pas laissé pour que le code soit plus simple à lire
+		  reference2= openCV.imgProc.CVCCanny(reference, 125.0, 175.0, 3, False)
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
 #tag Events PushButton_Gray1
 	#tag Event
 		Sub Action()
@@ -2085,6 +2108,30 @@ End
 		  
 		  MessageBox(f.NativePath)
 		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events bShow1
+	#tag Event
+		Sub Action()
+		  
+		  If reference2<>Nil Then
+		    openCV.HighGui.imgShow("source", reference2)  // Ouvre une fenêtre nouvelle avec l'image - cv.imshow( winname, mat ) - ⚠️ imhow et imGshow
+		    openCV.HighGui.waitKey(0) // attend qu'on appuie sur une touche (voir doc ci-dessous)
+		    
+		    openCV.HighGui.DestroyAllWindows // ferme les fenêtre mais pas celle de l'application
+		  Else
+		    MessageBox "No ref2"
+		  End If
+		  
+		  
+		  //Doc de waitKey()
+		  //Waits For a pressed key.
+		  //The Function waitKey waits For a key Event infinitely (when 𝚍𝚎𝚕𝚊𝚢≤0 ) Or For delay milliseconds,
+		  //when it Is positive. Since the OS has a minimum time between switching threads, the Function will
+		  //Not wait exactly delay ms, it will wait at least delay ms, depending on what Else Is running on
+		  // your computer at that time. It returns the code Of the pressed key Or -1 If no key was pressed
+		  //before the specified time had elapsed.
 		End Sub
 	#tag EndEvent
 #tag EndEvents
