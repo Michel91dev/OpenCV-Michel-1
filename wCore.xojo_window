@@ -183,8 +183,10 @@ End
 	#tag Event
 		Sub Open()
 		  coreResources=New Dictionary
-		  Var fr As FolderItem=SpecialFolder.Resource("coresample")
 		  
+		  // Var f As FolderItem=SpecialFolder.Resource("images").Child("starry_night.jpeg") // mettre l'image dans le dossier "images" du ~user
+		  
+		  Var fr As FolderItem=SpecialFolder.Resource("coresample")
 		  
 		  
 		  For Each ff As FolderItem In fr.Children

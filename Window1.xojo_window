@@ -195,7 +195,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   570
+      Left            =   553
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -207,7 +207,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   44
+      Top             =   12
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -219,7 +219,7 @@ Begin Window Window1
       Cancel          =   False
       Caption         =   "Original Picture"
       Default         =   False
-      Enabled         =   True
+      Enabled         =   False
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
@@ -227,7 +227,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   570
+      Left            =   553
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -239,11 +239,11 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   76
+      Top             =   84
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   184
+      Width           =   122
    End
    Begin PushButton PushButton2
       AllowAutoDeactivate=   True
@@ -798,7 +798,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   674
+      Left            =   553
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -830,7 +830,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   618
+      Left            =   797
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -1008,6 +1008,102 @@ Begin Window Window1
       Visible         =   True
       Width           =   100
    End
+   Begin PushButton PushButton_Gray1
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "TEST"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   828
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   34
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   44
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_Gray2
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "TEST2"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   828
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   35
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   76
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_Resource
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "SpecialFolder.Resource"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   797
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   36
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   99
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   111
+   End
 End
 #tag EndWindow
 
@@ -1120,7 +1216,7 @@ End
 		    Label1.Text="No image loaded!"
 		    bShow.Enabled=False
 		    Slider_Resize.Enabled=False
-		    bBlur.Enabled=False
+		    bBlur.Enabled=False // Comme l'image a bien été chargée on peut activer le bouton bblur qui par défaut est non sélectionné
 		  Else
 		    Var h As Integer=reference.Height
 		    Var w As Integer=reference.Width
@@ -1471,7 +1567,9 @@ End
 		  // il faut que l'image rentre dans le g (Graphics) de Canvas1
 		  Var s As Double=Min(g.Width/currentImage.Width, g.Height/currentImage.Height) // Fonction min() intéressante
 		  Var w, h As Double // width et height
-		  // If s>1.0 Then s=1.0 // initialement : If s>1.0 Then s=1.0
+		  
+		  // If s>1.0 Then s=1.0 // initialement : If s>1.0 Then s=1.0 mais cela empêchait l'image d'être agrandie ! donc nul
+		  
 		  w=currentImage.Width*s
 		  h=currentImage.Height*s
 		  
@@ -1877,6 +1975,51 @@ End
 		  // apply edge detection
 		  Var canny As openCV.CVCMat=openCV.imgProc.CVCCanny(blur, 85.0, 175.0, 3, False)
 		  show("canny", canny)
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Gray1
+	#tag Event
+		Sub Action()
+		  // Exemple  de code (de la doc Xojo) qui renvoie "/Users/M/Library/Application Support"
+		  Var f As FolderItem
+		  f = SpecialFolder.ApplicationData
+		  If f <> Nil Then
+		    MessageBox(f.NativePath)
+		  Else
+		    MessageBox("There is no Application Data folder on this computer.")
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Gray2
+	#tag Event
+		Sub Action()
+		  // Exemple  de code (de la doc Xojo) qui renvoie "/Users/M/Library/Application Support"
+		  Var f As FolderItem
+		  
+		  f = SpecialFolder.Documents // /Users/M/Documents  
+		  f = SpecialFolder.Home  //  /Users
+		  
+		  // MessageBox(f.NativePath)
+		  
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Resource
+	#tag Event
+		Sub Action()
+		  // Exemple  de code (de la doc Xojo) qui renvoie "/Users/M/Library/Application Support"
+		  Var f As FolderItem
+		  
+		  f = SpecialFolder.Documents // /Users/M/Documents  
+		  f = SpecialFolder.Home  //  /Users
+		  
+		  f = SpecialFolder.Resource("coresample") // ▶️ /Users/M/Documents/ [...] /OpenCV Michel 1/openCVDesktop.debug.app/Contents/Resources/coresample
+		  
+		  
+		  MessageBox(f.NativePath)
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

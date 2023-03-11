@@ -9,8 +9,10 @@ Inherits Application
 		Je change donc les options de build tant que la bibliothèque "libOpenCVC.dylib"
 		 n'existera pas en version M2 (donc ARM)
 		
+		
 		▶️ Dans iGen il est raconté que Microsoft a licencié de nombreux developpeurs de Visual Studio sur
 		Mac. Ceci n'aurgure rien de bon pour cet environnement qui est pourtant très bien et rapide.◀️
+		
 		
 		2023 0305
 		Je prends conscience que le code figure dans les codes externe, ce que je trouve bien
@@ -44,6 +46,7 @@ Inherits Application
 		J'élimine les modifications de .DStore dans GitHub
 		
 		___
+		
 		
 		
 	#tag EndNote
