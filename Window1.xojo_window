@@ -24,6 +24,35 @@ Begin Window Window1
    Type            =   0
    Visible         =   True
    Width           =   928
+   Begin GroupBox GroupBox4
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Caption         =   "Scroll Speed"
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   66
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   542
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Scope           =   2
+      TabIndex        =   43
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   44
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   102
+   End
    Begin GroupBox GroupBox2
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -56,7 +85,7 @@ Begin Window Window1
    Begin GroupBox GroupBox1
       AllowAutoDeactivate=   True
       Bold            =   False
-      Caption         =   "                Scale Image"
+      Caption         =   "Scale Image (or Use + and -)"
       Enabled         =   True
       FontName        =   "System"
       FontSize        =   0.0
@@ -114,14 +143,14 @@ Begin Window Window1
       Visible         =   True
       Width           =   108
    End
-   Begin Label Label1
+   Begin Label Label_ImageName
       AllowAutoDeactivate=   True
       Bold            =   False
       DataField       =   ""
       DataSource      =   ""
       Enabled         =   True
       FontName        =   "System"
-      FontSize        =   0.0
+      FontSize        =   12.0
       FontUnit        =   0
       Height          =   20
       Index           =   -2147483648
@@ -141,13 +170,13 @@ Begin Window Window1
       TabStop         =   True
       Text            =   "No image loaded"
       TextAlignment   =   0
-      TextColor       =   &c00000000
+      TextColor       =   &c32356600
       Tooltip         =   ""
       Top             =   12
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   288
+      Width           =   617
    End
    Begin PushButton bBlur
       AllowAutoDeactivate=   True
@@ -163,7 +192,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   553
+      Left            =   656
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -175,7 +204,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   12
+      Top             =   44
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -256,7 +285,7 @@ Begin Window Window1
       Height          =   440
       Index           =   -2147483648
       InitialParent   =   ""
-      Left            =   323
+      Left            =   319
       LockBottom      =   True
       LockedInPosition=   False
       LockLeft        =   True
@@ -284,7 +313,7 @@ Begin Window Window1
          Index           =   -2147483648
          InitialParent   =   "Canvas1"
          Italic          =   False
-         Left            =   665
+         Left            =   661
          LockBottom      =   False
          LockedInPosition=   False
          LockLeft        =   True
@@ -737,7 +766,7 @@ Begin Window Window1
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
-      Left            =   553
+      Left            =   656
       LockBottom      =   False
       LockedInPosition=   False
       LockLeft        =   True
@@ -749,7 +778,7 @@ Begin Window Window1
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   44
+      Top             =   73
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -1136,6 +1165,183 @@ Begin Window Window1
       Visible         =   False
       Width           =   122
    End
+   Begin Label Label_KeyPressed
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   8.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   True
+      Left            =   840
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   41
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "KeyPressed"
+      TextAlignment   =   0
+      TextColor       =   &c32356600
+      Tooltip         =   ""
+      Top             =   0
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   79
+   End
+   Begin Slider Slider_ScrollSpeed
+      AllowAutoDeactivate=   True
+      AllowLiveScrolling=   True
+      Enabled         =   True
+      Height          =   23
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Left            =   556
+      LineStep        =   1
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumValue    =   30
+      MinimumValue    =   1
+      PageStep        =   20
+      Scope           =   2
+      TabIndex        =   42
+      TabPanelIndex   =   0
+      TabStop         =   True
+      TickMarkStyle   =   0
+      Tooltip         =   ""
+      Top             =   77
+      Transparent     =   False
+      Value           =   10
+      Visible         =   True
+      Width           =   75
+   End
+   Begin Label Label_Key
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   8.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   True
+      Left            =   784
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   44
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Key pressed"
+      TextAlignment   =   0
+      TextColor       =   &c5C63B700
+      Tooltip         =   ""
+      Top             =   0
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   54
+   End
+   Begin Label Label_Arrow
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   330
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   2
+      Selectable      =   False
+      TabIndex        =   45
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Use arrows to move the Image"
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   108
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   314
+   End
+   Begin TextField TextField1
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF00
+      Bold            =   False
+      DataField       =   ""
+      DataSource      =   ""
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Format          =   ""
+      HasBorder       =   True
+      Height          =   22
+      Hint            =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   784
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumCharactersAllowed=   0
+      Password        =   False
+      ReadOnly        =   False
+      Scope           =   2
+      TabIndex        =   46
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextAlignment   =   0
+      TextColor       =   &c00000000
+      Tooltip         =   ""
+      Top             =   98
+      Transparent     =   False
+      Underline       =   False
+      ValidationMask  =   ""
+      Visible         =   True
+      Width           =   80
+   End
 End
 #tag EndWindow
 
@@ -1143,26 +1349,51 @@ End
 	#tag Event
 		Function KeyDown(Key As String) As Boolean
 		  // //P 90 LanguageReference 2017 Mike
-		  // 
-		  // Select Case Asc(Key)
-		  // 
-		  // Case 31 'up arrow
-		  // Yscroll=YScroll-8 
-		  // Canvas1.Scroll 0,-8
-		  // 
-		  // Case 29 'Right arrow 
-		  // Xscroll=XScroll-8 
-		  // Canvas1.Scroll -8,0
-		  // 
-		  // Case 30 'Down arrow 
-		  // Yscroll=Yscroll+8 
-		  // Canvas1.Scroll 0,8
-		  // 
-		  // Case 28 'Left arrow
-		  //  Xscroll=Xscroll+8 
-		  // Canvas1.Scroll 8,0 
-		  // 
-		  // End Select
+		  
+		  Label_KeyPressed.Text = Str( Asc (Key) )
+		  
+		  
+		  Select Case Asc(Key)
+		    
+		  Case 31 'up arrow
+		    yZoom = yZoom - Slider_ScrollSpeed.Value
+		    if yZoom <0 Then
+		      yZoom = 0
+		    End If
+		    
+		  Case 28 'Right arrow 
+		    xZoom = xZoom + Slider_ScrollSpeed.Value
+		    
+		  Case 30 'Down arrow 
+		    yZoom = yZoom + Slider_ScrollSpeed.Value
+		    
+		    
+		  Case 29 // Left arrow
+		    xZoom = xZoom - Slider_ScrollSpeed.Value
+		    if xZoom <0 Then
+		      xZoom = 0
+		    End If
+		    
+		    // Pilotons le facteur de Zoom au clavier avec "+" et "-"
+		  Case 43// 45$ est le code +
+		    Slider_Resize.Value = Slider_Resize.Value + 1
+		    if Slider_Resize.Value > Slider_Resize.MaximumValue then
+		      Slider_Resize.Value = Slider_Resize.MaximumValue
+		    End If
+		    
+		    
+		  Case 45 // 45$ est le code -
+		    Slider_Resize.Value = Slider_Resize.Value - 1
+		    if Slider_Resize.Value < Slider_Resize.MinimumValue then
+		      Slider_Resize.Value = Slider_Resize.MinimumValue
+		    End If
+		    
+		    
+		  End Select
+		  
+		  currentImage = currentImage // force the Paint Event of the Canvas
+		  
+		  Return True
 		End Function
 	#tag EndEvent
 
@@ -1264,12 +1495,15 @@ End
 		    //reference=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Grayscale) // j'ai testé en nuances de gris pour voir
 		  End If
 		  If reference=Nil Then
-		    Label1.Text="No image loaded!"
+		    Label_ImageName.TextColor = rgb(255, 30, 0) // &cFF0000
+		    Label_ImageName.Text = "No image loaded!"
 		    bShow.Enabled=False
 		    Slider_Resize.Enabled=False
 		    bBlur.Enabled=False 
 		  Else
-		    Label1.Text="Image loaded (" + reference.Height.ToString + " / " + reference.Width.ToString + ")"
+		    Label_ImageName.TextColor = rgb(255, 255, 0)
+		    Label_ImageName.Text="Loaded Image " + f.Name + ", Width = " +  reference.Width.ToString + _
+		    ", Height = " + reference.Height.ToString
 		    bShow.Enabled=True  // we can activate the buttons
 		    Slider_Resize.Enabled=True
 		    bBlur.Enabled=True
@@ -1309,17 +1543,19 @@ End
 		    //reference=openCV.Codecs.imread(f.NativePath, openCV.ImReadModes.Grayscale) // j'ai testé en nuances de gris pour voir
 		  End If
 		  If reference=Nil Then
-		    Label1.Text="No image loaded!"
+		    Label_ImageName.TextColor = rgb(255, 30, 0) // &cFF0000
+		    Label_ImageName.Text = "No image loaded!"
 		    bShow.Enabled=False
 		    Slider_Resize.Enabled=False
 		    bBlur.Enabled=False 
 		  Else
-		    Label1.Text="Image loaded (" +  f.Name + " : " + reference.Height.ToString + " / " + reference.Width.ToString + ")"
+		    Label_ImageName.Text = "Loaded Image " + f.Name + ", Width = " +  reference.Width.ToString + _
+		    ", Height = " + reference.Height.ToString
 		    bShow.Enabled=True  // we can activate the buttons
 		    Slider_Resize.Enabled=True
 		    bBlur.Enabled=True
 		    
-		    // Canvas1. déclencher un refresh
+		    currentImage =  reference.image // will refresh the Canvas and show the image in it
 		  End If
 		End Sub
 	#tag EndMethod
@@ -1398,6 +1634,10 @@ End
 		currentImage As Picture
 	#tag EndComputedProperty
 
+	#tag Property, Flags = &h1
+		Protected facteurZoom As Integer = 0
+	#tag EndProperty
+
 	#tag Property, Flags = &h21
 		Private imageResources As Dictionary
 	#tag EndProperty
@@ -1424,6 +1664,14 @@ End
 
 	#tag Property, Flags = &h21
 		Private threshold2 As Double
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected xZoom As Integer = 0
+	#tag EndProperty
+
+	#tag Property, Flags = &h1
+		Protected yZoom As Integer = 0
 	#tag EndProperty
 
 
@@ -1645,7 +1893,7 @@ End
 		  //  Draws the picture at the specified location.  - ▶️Les 3 premiers paramètres sont obligatoires
 		  // après ces 3 premiers paramètres ▶️  The optional parameters are used to copy a portion of the picture and for scaling the picture :
 		  // DestWidth and DestHeight are used to change the scaling of the picture when it is drawn and default to the Width and Height of the picture. SourceX and SourceY default to 0 and are used to determine the upper-left coordinate you wish to copy from. SourceWidth and SourceHeight default to the Width and Height of the picture and are used to indicate the portion of the picture you wish to copy.
-		  g.DrawPicture currentImage, 0, 0, w, h, 0, 0, currentImage.Width, currentImage.Height
+		  g.DrawPicture currentImage, 0, 0, w, h, xZoom, yZoom, currentImage.Width, currentImage.Height
 		  
 		  
 		  // ⚠️ comme je ne comprends pas à quoi cela sert, je le déscative. 
@@ -2132,6 +2380,32 @@ End
 		  //Not wait exactly delay ms, it will wait at least delay ms, depending on what Else Is running on
 		  // your computer at that time. It returns the code Of the pressed key Or -1 If no key was pressed
 		  //before the specified time had elapsed.
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events Slider_ScrollSpeed
+	#tag Event
+		Sub ValueChanged()
+		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
+		  // reference type is : openCV.CVCMat
+		  
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
+		  // ▶️ Maintenant je le mets à l'échelle en fonction du slider de Zoom
+		  Var scale As Double  // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
+		  scale = Slider_Resize.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
+		  Var scaledSize As  openCV.CVCSize // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
+		  scaledSize = New openCV.CVCSize (reference.Width*scale, reference.Height*Scale) 
+		  
+		  
+		  
+		  // DOC :  openCV.imgProc.CVCresize(source as CVCMat, dest as CVCMat, dSize as CVCSize, fx as double, fy as double, interpolation as interpolationFlags)
+		  openCV.imgProc.CVCresize(reference, reference2, scaledSize, 0.0, 0.0, openCV.InterpolationFlags.Area)
+		  
+		  
+		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
+		  
+		  
 		End Sub
 	#tag EndEvent
 #tag EndEvents

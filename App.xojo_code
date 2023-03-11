@@ -52,6 +52,11 @@ Inherits Application
 	#tag EndNote
 
 	#tag Note, Name = Modifs de Code
+		2023 0311 Après avoir implémenté les raccourcis clavier, je note sans vouloir le corriger qu'il y a un petit
+		Artefact avec le + et - (et le slide zoom) qui repassent obligatoirement par l'image initiale.
+		En clair les effets ne se cumulent pas mais dans le cas du egde le déplacement déplace bien l'image avec Edge
+		car en fait les effet sont tous "refait" dans la Method m_Contours (Canny Hedge Detection)
+		
 		2023 0309 
 		Je revois les bouton un par un car ils sont difficles à comprendre et sans aucun effort du dev pour aider à comprendre le code
 		C'est incroyable le peu d'effort de documentation. En fait inexistant et décourageant.
