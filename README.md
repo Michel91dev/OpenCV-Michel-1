@@ -6,5 +6,5 @@ I'm not sure if this is can be useful for anyone... 🙄
 
  I'm a **Mac** user and this project is for Mac
  
-⚠️ in the original project the "libOpenCVC.dylib" build option is set to "INTEL", this got me crazy for several hours until (with the help of a friend) I saw this. ** The build App needs to be forced to "x86 64 bits (Intel)" **, so M1/M2 (ARM) Mac Processor user can also use it ⚠️
+⚠️ in the original project the "libOpenCVC.dylib" build option is set to "INTEL", this got me crazy for several hours until (with the help of a friend) I saw this. **The build App needs to be forced to "x86 64 bits (Intel)"**, so M1/M2 (ARM) Mac Processor user can also use it ⚠️
 
