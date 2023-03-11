@@ -769,7 +769,7 @@ Begin Window Window1
       LockLeft        =   True
       LockRight       =   False
       LockTop         =   True
-      MaximumValue    =   100
+      MaximumValue    =   300
       MinimumValue    =   1
       PageStep        =   20
       Scope           =   2
@@ -1109,6 +1109,32 @@ End
 
 #tag WindowCode
 	#tag Event
+		Function KeyDown(Key As String) As Boolean
+		  // //P 90 LanguageReference 2017 Mike
+		  // 
+		  // Select Case Asc(Key)
+		  // 
+		  // Case 31 'up arrow
+		  // Yscroll=YScroll-8 
+		  // Canvas1.Scroll 0,-8
+		  // 
+		  // Case 29 'Right arrow 
+		  // Xscroll=XScroll-8 
+		  // Canvas1.Scroll -8,0
+		  // 
+		  // Case 30 'Down arrow 
+		  // Yscroll=Yscroll+8 
+		  // Canvas1.Scroll 0,8
+		  // 
+		  // Case 28 'Left arrow
+		  //  Xscroll=Xscroll+8 
+		  // Canvas1.Scroll 8,0 
+		  // 
+		  // End Select
+		End Function
+	#tag EndEvent
+
+	#tag Event
 		Sub Open()
 		  // Initialisations
 		  
@@ -1257,18 +1283,36 @@ End
 		  
 		  Var reference2 As openCV.CVCMat
 		  
-		  // convert to grayscale
+		  
+		  
+		  
+		  // convert to grayscale - ▶️ Probablement plus efficace pour repérer les Hedges (contours)
 		  Var grayMAT As openCV.CVCMat
 		  grayMAT = openCV.imgProc.CVCCvtColor(reference, openCV.ColorConversionCodes.Rgb2gray, 0)
 		  
-		  // apply gaussian blur
+		  // apply gaussian blur -  ▶️ là c'est plus étonnant de faire un flou avant détection des Hedges ?!
 		  Var blurSize As New openCV.CVCSize(0, 0)
-		  Var blur As openCV.CVCMat
-		  Blur = openCV.imgProc.CVCGaussianBlur(grayMAT, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
+		  Var blurMat As openCV.CVCMat
+		  blurMat = openCV.imgProc.CVCGaussianBlur(grayMAT, blurSize, 3.0, 3.0, openCV.BorderTypes.Default)
 		  
 		  
 		  // apply edge detection
-		  reference2 = openCV.imgProc.CVCCanny(blur, threshold1, threshold2, 3, False)
+		  reference2 = openCV.imgProc.CVCCanny(blurMat, threshold1, threshold2, 3, False)
+		  
+		  
+		  
+		  Var scale As Double  // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
+		  scale = Slider_Resize.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
+		  
+		  Var scaledSize As  openCV.CVCSize // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
+		  scaledSize = New openCV.CVCSize (reference2.Width*scale, reference2.Height*Scale) 
+		  
+		  // DOC :  openCV.imgProc.CVCresize(source as CVCMat, dest as CVCMat, dSize as CVCSize, fx as double, fy as double, interpolation as interpolationFlags)
+		  openCV.imgProc.CVCresize(reference2, reference2, scaledSize, 0.0, 0.0, openCV.InterpolationFlags.Area)
+		  
+		  
+		  
+		  
 		  
 		  currentImage=reference2.image // j'ajoute cette ligne  qui existait dans le bouton Blurr mais qui semble avoir été oubliée ici
 		  
@@ -1565,27 +1609,45 @@ End
 		  If currentImage=Nil Then Return // affectée lors du Load de l'image
 		  
 		  // il faut que l'image rentre dans le g (Graphics) de Canvas1
-		  Var s As Double=Min(g.Width/currentImage.Width, g.Height/currentImage.Height) // Fonction min() intéressante
+		  Var s As Double
+		  // s = Min(g.Width/currentImage.Width, g.Height/currentImage.Height) // Fonction min() intéressante
+		  s = Slider_Resize.Value / 100 // 🔴 J'ai changé la ligne précédente pour qu'il n'y a plus de boudaries à l'image (Zoom + ou -) 
+		  
+		  
 		  Var w, h As Double // width et height
 		  
 		  // If s>1.0 Then s=1.0 // initialement : If s>1.0 Then s=1.0 mais cela empêchait l'image d'être agrandie ! donc nul
 		  
-		  w=currentImage.Width*s
-		  h=currentImage.Height*s
+		  w=currentImage.Width*s  // donc en fait inutile pour moi puisque j'ai mis s = 1
+		  h=currentImage.Height*s  // donc en fait inutile pour moi puisque j'ai mis s = 1
+		  
+		  // w = currentImage.Width * Slider_Resize.Value / 100 // ▶️ Je préfère que l'image reste avec le Zoom des curseurs
+		  // h =  currentImage.Height * Slider_Resize.Value / 100
+		  
 		  
 		  // affiche la Picture à oa bonne dimension
+		  // Image as Picture, X as Integer, Y as Integer [,DestWidth as Integer, DestHeight as Integer, SourceX as Integer, SourceY as Integer, SourceWidth as Integer, SourceHeight as Integer]
+		  //  Draws the picture at the specified location.  - ▶️Les 3 premiers paramètres sont obligatoires
+		  // après ces 3 premiers paramètres ▶️  The optional parameters are used to copy a portion of the picture and for scaling the picture :
+		  // DestWidth and DestHeight are used to change the scaling of the picture when it is drawn and default to the Width and Height of the picture. SourceX and SourceY default to 0 and are used to determine the upper-left coordinate you wish to copy from. SourceWidth and SourceHeight default to the Width and Height of the picture and are used to indicate the portion of the picture you wish to copy.
 		  g.DrawPicture currentImage, 0, 0, w, h, 0, 0, currentImage.Width, currentImage.Height
 		  
-		  // rects : je ne comprends ce qu'est ce tableau de Pair défini en  Properties de Window1
-		  If rects.Count>0 Then
-		    For i As Integer=0 To rects.LastIndex // on parcours tout le tableau de rects()
-		      g.DrawingColor=rects(i).Left
-		      Var r() As Rect=rects(i).Right // rect() est de type Pair et Pair a .left et .right
-		      For j As Integer=0 To r.LastIndex
-		        g.DrawRectangle r(j).Left*s, r(j).Top*s, r(j).width*s, r(j).height*s
-		      Next
-		    Next
-		  End If
+		  
+		  // ⚠️ comme je ne comprends pas à quoi cela sert, je le déscative. 
+		  // 🔴 En cas de bug réativer le code ci-dessous 🔴
+		  // ▶️ après désactivation je n'ai pas pour l'instant du de différnce...
+		  
+		  // // rects : je ne comprends ce qu'est ce tableau de Pair défini en  Properties de Window1
+		  // // et qui semble contenir des rectangles de couleur...
+		  // If rects.Count>0 Then
+		  // For i As Integer=0 To rects.LastIndex // on parcours tout le tableau de rects()
+		  // g.DrawingColor=rects(i).Left
+		  // Var r() As Rect=rects(i).Right // rect() est de type Pair et Pair a .left et .right
+		  // For j As Integer=0 To r.LastIndex
+		  // g.DrawRectangle r(j).Left*s, r(j).Top*s, r(j).width*s, r(j).height*s
+		  // Next
+		  // Next
+		  // End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
@@ -1875,14 +1937,17 @@ End
 		  If reference=Nil Then Return // car pas d'image en reference (qui a été chargé par  la Méthod "LoadImage()"
 		  // reference type is : openCV.CVCMat
 		  
-		  Var scale As Double
+		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
+		  
+		  
+		  
+		  Var scale As Double  // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
 		  scale = Slider_Resize.Value / 100 // j'ajoute ce facteur deréduction de Zoom (pour l'instant l'image ne pas pas être zoom plus que la taille du canvas - à étudier)
 		  
-		  // 👁utiliser CMD-CLIC sur openCV.CVCSize pour voir la structure dans le Code de ce projet Xojo - mettre un breaker pour voir l'execution step by step si tu es curieux
-		  Var scaledSize As New openCV.CVCSize(reference.Width*scale, reference.Height*Scale) 
+		  Var scaledSize As  openCV.CVCSize // Je sais que ça tiens en 1 ligne mais c'est plus clair en 2
+		  scaledSize = New openCV.CVCSize (reference.Width*scale, reference.Height*Scale) 
 		  
 		  
-		  reference2= New openCV.CVCMat // une nouvelle Matrice d'image en plus de reference
 		  
 		  
 		  // DOC :  openCV.imgProc.CVCresize(source as CVCMat, dest as CVCMat, dSize as CVCSize, fx as double, fy as double, interpolation as interpolationFlags)
