@@ -1,6 +1,6 @@
 #tag Class
 Protected Class App
-Inherits Application
+Inherits DesktopApplication
 	#tag Note, Name = A LIRE GENERAL
 		2023 0306 ⚠️ il faut préciser  dans les options de Build Settings que "This Computer" est 
 		x86 64bits (donc INTEL) car la Bibliothèque "libOpenCVC.dylib" telle que téléchargée en ce moment 

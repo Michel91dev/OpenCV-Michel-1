@@ -1,5 +1,5 @@
-#tag Window
-Begin Window Window1
+#tag DesktopWindow
+Begin DesktopWindow Window1
    Backdrop        =   0
    BackgroundColor =   &c76767600
    Composite       =   False
@@ -1311,11 +1311,11 @@ Begin Window Window1
       Width           =   80
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 	#tag Event
-		Function KeyDown(Key As String) As Boolean
+		Function KeyDown(key As String) As Boolean
 		  // //P 90 LanguageReference 2017 Mike
 		  
 		  Label_KeyPressed.Text = Str( Asc (Key) )
@@ -1325,9 +1325,9 @@ End
 		    
 		  Case 31 'up arrow
 		    yZoom = yZoom - Slider_ScrollSpeed.Value
-		    if yZoom <0 Then
-		      yZoom = 0
-		    End If
+		    // if yZoom <0 Then // si je veux empêcher le défilement avant le bord haut
+		    // yZoom = 0
+		    // End If
 		    
 		  Case 28 'Right arrow 
 		    xZoom = xZoom + Slider_ScrollSpeed.Value
@@ -1338,9 +1338,9 @@ End
 		    
 		  Case 29 // Left arrow
 		    xZoom = xZoom - Slider_ScrollSpeed.Value
-		    if xZoom <0 Then
-		      xZoom = 0
-		    End If
+		    // if xZoom <0 Then  // si je veux empêcher le défilement avant le bord gauche
+		    // xZoom = 0
+		    // End If
 		    
 		    // Pilotons le facteur de Zoom au clavier avec "+" et "-"
 		  Case 43// 45$ est le code +
@@ -1366,7 +1366,7 @@ End
 	#tag EndEvent
 
 	#tag Event
-		Sub Open()
+		Sub Opening()
 		  // Initialisations
 		  
 		  
@@ -1381,6 +1381,7 @@ End
 		  
 		  wCore.Show
 		  Window1.Show
+		  
 		  
 		  // A Jeter
 		  // Var L As Integer
