@@ -691,38 +691,6 @@ Begin Window Window1
       Visible         =   True
       Width           =   74
    End
-   Begin PushButton PushButton1
-      AllowAutoDeactivate=   True
-      Bold            =   False
-      Cancel          =   False
-      Caption         =   "Core"
-      Default         =   False
-      Enabled         =   True
-      FontName        =   "System"
-      FontSize        =   0.0
-      FontUnit        =   0
-      Height          =   20
-      Index           =   -2147483648
-      InitialParent   =   ""
-      Italic          =   False
-      Left            =   10
-      LockBottom      =   False
-      LockedInPosition=   False
-      LockLeft        =   True
-      LockRight       =   False
-      LockTop         =   True
-      MacButtonStyle  =   0
-      Scope           =   2
-      TabIndex        =   23
-      TabPanelIndex   =   0
-      TabStop         =   True
-      Tooltip         =   ""
-      Top             =   150
-      Transparent     =   False
-      Underline       =   False
-      Visible         =   True
-      Width           =   80
-   End
    Begin Slider Slider_Resize
       AllowAutoDeactivate=   True
       AllowLiveScrolling=   True
@@ -1402,11 +1370,17 @@ End
 		  // Initialisations
 		  
 		  
-		  Window1.Left = 200
-		  Window1.Width =   Screen(0).Width - 2*Window1.Left
+		  Window1.Left = 50
+		  Window1.Width =   Screen(0).Width /2
 		  
 		  Window1.top = Window1.Left 
 		  Window1.Height = Screen(0).Height - 2*Window1.top
+		  
+		  wCore.Left = Window1.Left + Window1.Width+5
+		  wCore.Width = Screen(0).Width - wCore.Left - 50
+		  
+		  wCore.Show
+		  Window1.Show
 		  
 		  // A Jeter
 		  // Var L As Integer
@@ -2184,13 +2158,6 @@ End
 	#tag Event
 		Sub ValueChanged(index as Integer)
 		  tSobleParam(index).Text=me.Value.ToString
-		End Sub
-	#tag EndEvent
-#tag EndEvents
-#tag Events PushButton1
-	#tag Event
-		Sub Action()
-		  wCore.show
 		End Sub
 	#tag EndEvent
 #tag EndEvents

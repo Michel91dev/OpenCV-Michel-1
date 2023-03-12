@@ -10,7 +10,7 @@ Begin Window wCore
    HasFullScreenButton=   False
    HasMaximizeButton=   True
    HasMinimizeButton=   True
-   Height          =   432
+   Height          =   580
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -32,7 +32,7 @@ Begin Window wCore
       Backdrop        =   0
       DoubleBuffer    =   False
       Enabled         =   True
-      Height          =   328
+      Height          =   418
       Index           =   -2147483648
       InitialParent   =   ""
       Left            =   20
@@ -46,7 +46,7 @@ Begin Window wCore
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   52
+      Top             =   110
       Transparent     =   True
       Visible         =   True
       Width           =   560
@@ -106,7 +106,7 @@ Begin Window wCore
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   392
+      Top             =   540
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -175,6 +175,294 @@ Begin Window wCore
       Underline       =   False
       Visible         =   True
       Width           =   256
+   End
+   Begin PushButton PushButton_AbsDiff
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "AbsDiff"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   14
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   52
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_Add
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Add"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   20
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   15
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   78
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_AddWeighted
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "AddWeighted"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   105
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   16
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   52
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   102
+   End
+   Begin PushButton PushButton_BitwiseAnd
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "BitwiseAnd"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   112
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   17
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   78
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_BitwiseNot
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "BitwiseNot"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   219
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   18
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   52
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_BitwiseOr
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "BitwiseOr"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   219
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   19
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   78
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_BitwiseXor
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "BitwiseXor"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   311
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   52
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_Divide
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Divide"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   311
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   78
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
+   End
+   Begin PushButton PushButton_ExtractChannel
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Cancel          =   False
+      Caption         =   "Extract Channel"
+      Default         =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      InitialParent   =   ""
+      Italic          =   False
+      Left            =   400
+      LockBottom      =   False
+      LockedInPosition=   False
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MacButtonStyle  =   0
+      Scope           =   2
+      TabIndex        =   22
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Tooltip         =   ""
+      Top             =   52
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   80
    End
 End
 #tag EndWindow
@@ -256,7 +544,7 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
-		Private Sub testAbsDiff()
+		Private Function mLoadImages() As Boolean
 		  // J'ai simplifié le code car les noms de fichiers avec les dictionaries sont contre-produfctifs pour comprendre et apprendre. Et pas un seul commentaire !! il y avait // Var pTest As FolderItem = loadFromCore("Test") qui sans intérêt
 		  
 		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
@@ -272,24 +560,35 @@ End
 		    
 		    images.add New openCV.CVCMat           // ce sera le resultats différentiel
 		    
-		    openCV.Core.AbsDiff(images(0), images(1), images(2)) // appel de la fonction
 		    
-		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		    Return True //
+		    
+		  Else
+		    Return False // pb sur les pointeur, les images n'ont pas bien été chargées
 		  End If
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub testAbsDiff()
+		  
 		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
 		Private Sub testAdd()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
 		    images.Add openCV.Codecs.imRead(pTest.NativePath, openCV.ImReadModes.Unchanged)
 		    images.add New openCV.CVCMat
 		    
-		    openCV.Core.Add(images(0), images(1), images(2))
+		    openCV.Core.AbsDiff(images(0), images(1), images(2))
 		    Canvas1.Invalidate
 		  End If
 		End Sub
@@ -297,8 +596,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testAddWeighted()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -314,8 +615,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testBitwiseAnd()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -330,9 +633,11 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testBitwiseNot()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
-		  If pLogo<>Nil And pTest<>Nil Then
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  
+		  
+		  If pLogo<>Nil  Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged)
 		    images.add New openCV.CVCMat
@@ -345,8 +650,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testBitwiseOr()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -361,8 +668,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testBitwiseXor()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -377,8 +686,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testDivide()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -412,8 +723,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testFlip()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -431,8 +744,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testRepeat()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -446,8 +761,10 @@ End
 
 	#tag Method, Flags = &h1
 		Protected Sub testRotate()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged)
@@ -458,6 +775,7 @@ End
 		    openCV.Core.Rotate(images(0), images(1), openCV.RotateFlags.Rotate90Clockwise)
 		    openCV.Core.Rotate(images(0), images(2), openCV.RotateFlags.Rotate180)
 		    openCV.Core.Rotate(images(0), images(3), openCV.RotateFlags.Rotate90CounterClockwise)
+		    
 		    Canvas1.Invalidate
 		  End If
 		End Sub
@@ -465,8 +783,10 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testSwap()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
@@ -525,11 +845,15 @@ End
 #tag Events bSplit
 	#tag Event
 		Sub Action()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  // 🔴 Ce code plante, il faudra que je regarde
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
 		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
+		    
 		    'images.Add new openCV.CVCMat
 		    'Var matV As New openCV.CVCMatVector
 		    'matV.Add New openCV.CVCMat
@@ -539,6 +863,7 @@ End
 		    
 		    
 		    'openCV.Core.Split(images(0), matV)
+		    
 		    Var matv2 As New openCV.CVCMatVector
 		    matv2.add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
 		    matv2.Add openCV.Codecs.imread(pTest.NativePath, openCV.ImReadModes.Unchanged) 
@@ -548,9 +873,11 @@ End
 		      Var m As openCV.CVCMat=matv2.RowAt(i)
 		      Var w As Integer=m.Width
 		      Var h As Integer=m.Height
+		      
 		      //var b as Boolean=m.
 		      p.Add m.image1
 		      //images.add matv.RowAt(i)
+		      
 		    Next
 		    Canvas1.Invalidate
 		  End If
@@ -588,6 +915,186 @@ End
 		  Case "Rotate"
 		    testRotate
 		  End Select
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_AbsDiff
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    openCV.Core.AbsDiff(images(0), images(1), images(2)) // appel de la fonction
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 iamges could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Add
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    openCV.Core.Add(images(0), images(1), images(2)) // appel de la fonction
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 images could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_AddWeighted
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    Var alpha As Double=Slider_Resize.Value/Slider_Resize.MaximumValue
+		    Var beta As Double=1-alpha
+		    openCV.Core.AddWeighted(images(0), alpha, images(1), beta, 0.0, images(2))
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 images could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_BitwiseAnd
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    
+		    openCV.Core.BitwiseAnd(images(0), images(1), images(2))
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 images could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_BitwiseNot
+	#tag Event
+		Sub Action()
+		  // Code sans appel à mLoadImages
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  
+		  If pLogo<>Nil Then
+		    
+		    images.RemoveAll
+		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged)
+		    images.add New openCV.CVCMat
+		    
+		    openCV.Core.BitwiseNot(images(0), images(1)) 
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("pLogo file could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_BitwiseOr
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    
+		    openCV.Core.BitwiseOr(images(0), images(1), images(2))
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 images could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_BitwiseXor
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    
+		    openCV.Core.BitwiseXor(images(0), images(1), images(2)) /// ◀️
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 images could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_Divide
+	#tag Event
+		Sub Action()
+		  If mLoadImages() then // j'appelle ma fonction pour mutualiser le code
+		    
+		    
+		    openCV.Core.Divide(images(0), images(1), images(2))   // ◀️
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("At least one of the 2 images could not be loaded")
+		    
+		  End If
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events PushButton_ExtractChannel
+	#tag Event
+		Sub Action()
+		  // extractchannel extrait une couleur selon le troisième paramètre nommé coi dans la doc (non pas RGB mais 
+		  // BGR comme il est précisé dans le manuel de OpenCV au début quand il est expliqué les matrices. Le Rouge et le 
+		  // Bleu sont inversé dans le codage des pixels
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  
+		  
+		  If pLogo<>Nil then
+		    
+		    images.RemoveAll
+		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
+		    images.Add New openCV.CVCMat
+		    images.Add New openCV.CVCMat
+		    images.Add New openCV.CVCMat
+		    
+		    openCV.Core.ExtractChannel(images(0), images(1), 0) // 0=Bleu
+		    openCV.Core.ExtractChannel(images(0), images(2), 1) // 1=Vert
+		    openCV.Core.ExtractChannel(images(0), images(3), 2) // 2=Rouge 
+		    
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
+		    
+		  Else 
+		    MessageBox("pLogo file could not be loaded")
+		    
+		  End If
 		End Sub
 	#tag EndEvent
 #tag EndEvents
