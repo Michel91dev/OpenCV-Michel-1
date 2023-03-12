@@ -182,27 +182,30 @@ End
 #tag WindowCode
 	#tag Event
 		Sub Open()
-		  coreResources=New Dictionary
+		  // popule les 2 dictionary de Properties
+		  
+		  coreResourcesDictionary=New Dictionary
 		  
 		  // Var f As FolderItem=SpecialFolder.Resource("images").Child("starry_night.jpeg") // mettre l'image dans le dossier "images" du ~user
 		  
 		  Var fr As FolderItem=SpecialFolder.Resource("coresample")
 		  
-		  
+		  // pour tous les fichier du dossier "coresample" le code enlève l'extension
 		  For Each ff As FolderItem In fr.Children
 		    Var ffile() As String=ff.Name.Split(".")
 		    If ffile.Count>1 Then ffile.RemoveAt(ffile.LastIndex)
-		    coreResources.Value(String.FromArray(ffile, ".").Lowercase)=ff.NativePath
+		    coreResourcesDictionary.Value(String.FromArray(ffile, ".").Lowercase)=ff.NativePath // récupère le nom des fichiers sans l'extension
 		  Next
 		  
-		  imageResources=New Dictionary
+		  // dans le dossier local "images" il fait de même dans un autre dictionaire
+		  imageResourcesDictionary=New Dictionary
 		  fr=SpecialFolder.Resource("images")
 		  For Each ff As FolderItem In fr.Children
 		    Var ffile() As String=ff.Name.Split(".")
 		    If ffile.Count>1 Then ffile.RemoveAt(ffile.LastIndex)
-		    imageResources.Value(String.FromArray(ffile, ".").Lowercase)=ff.NativePath
+		    imageResourcesDictionary.Value(String.FromArray(ffile, ".").Lowercase)=ff.NativePath
 		  Next
-		  'Var k() As Variant=imageResources.Keys
+		  'Var k() As Variant=imageResourcesDictionary.Keys
 		  'For i As Integer=0 To k.LastIndex
 		  'sampleImage.AddRow k(i).StringValue.Titlecase
 		  'sampleImage.RowTagAt(i)=k(i).StringValue
@@ -214,7 +217,9 @@ End
 
 	#tag Method, Flags = &h21
 		Private Function loadFromCore(resName as String) As FolderItem
-		  Var path As String=coreResources.Lookup(resName.Lowercase, "")
+		  // Code à analyser
+		  
+		  Var path As String=coreResourcesDictionary.Lookup(resName.Lowercase, "")
 		  If path.IsEmpty Then Return Nil
 		  
 		  Var f As FolderItem
@@ -233,7 +238,7 @@ End
 
 	#tag Method, Flags = &h21
 		Private Function loadFromImages(resName as String) As FolderItem
-		  Var path As String=imageResources.Lookup(resName.Lowercase, "")
+		  Var path As String=imageResourcesDictionary.Lookup(resName.Lowercase, "")
 		  If path.IsEmpty Then Return Nil
 		  
 		  Var f As FolderItem
@@ -252,16 +257,24 @@ End
 
 	#tag Method, Flags = &h21
 		Private Sub testAbsDiff()
-		  Var pLogo As FolderItem=loadFromCore("logo")
-		  Var pTest As FolderItem=loadFromCore("Test")
+		  // J'ai simplifié le code car les noms de fichiers avec les dictionaries sont contre-produfctifs pour comprendre et apprendre. Et pas un seul commentaire !! il y avait // Var pTest As FolderItem = loadFromCore("Test") qui sans intérêt
+		  
+		  Var pLogo As FolderItem =   SpecialFolder.Resource("coresample").Child("logo.jpg")
+		  Var pTest As FolderItem = SpecialFolder.Resource("coresample").Child("test.png")
+		  
+		  
 		  If pLogo<>Nil And pTest<>Nil Then
 		    images.RemoveAll
-		    images.Add openCV.Codecs.imread(pLogo.NativePath, openCV.ImReadModes.Unchanged) 
-		    images.Add openCV.Codecs.imRead(pTest.NativePath, openCV.ImReadModes.Unchanged)
-		    images.add New openCV.CVCMat
 		    
-		    openCV.Core.AbsDiff(images(0), images(1), images(2))
-		    Canvas1.Invalidate
+		    images.Add openCV.Codecs.imRead(pLogo.NativePath, openCV.ImReadModes.Unchanged)  // on prend le logo
+		    
+		    images.Add openCV.Codecs.imRead(pTest.NativePath, openCV.ImReadModes.Unchanged) // puis l'image test
+		    
+		    images.add New openCV.CVCMat           // ce sera le resultats différentiel
+		    
+		    openCV.Core.AbsDiff(images(0), images(1), images(2)) // appel de la fonction
+		    
+		    Canvas1.Invalidate // déclenche le paint pour mettre à jours
 		  End If
 		End Sub
 	#tag EndMethod
@@ -467,14 +480,17 @@ End
 
 
 	#tag Property, Flags = &h21
-		Private coreResources As Dictionary
+		Private coreResourcesDictionary As Dictionary
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private imageResources As Dictionary
+		Private imageResourcesDictionary As Dictionary
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
+		#tag Note
+			// tableau de Matrices openCV.CVCMat
+		#tag EndNote
 		Private images() As openCV.CVCMat
 	#tag EndProperty
 
@@ -546,7 +562,7 @@ End
 		Sub Action()
 		  Select Case functionToCall.SelectedRow
 		  Case "AbsDiff"
-		    testAbsDiff
+		    testAbsDiff // choix par défaut
 		  Case "Add"
 		    testAdd
 		  Case "AddWeighted"

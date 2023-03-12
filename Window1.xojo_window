@@ -1444,16 +1444,16 @@ End
 		  
 		  
 		  
-		  imageResources=New Dictionary // voir la doc de Xojo mais c'est une liste de Pair
+		  imageResourcesDictionary=New Dictionary // voir la doc de Xojo mais c'est une liste de Pair
 		  Var fr As FolderItem=SpecialFolder.Resource("images")
 		  
 		  // pour chaque fichier qui est dans le dossier "images"
 		  For Each ff As FolderItem In fr.Children             // ⚠️ le "in" est très interessant, voir Doc Xojo
 		    Var ffile() As String=ff.Name.Split(".")        // Split est aussi très interessant pour éclater le str en autant de str délimité par "." ici
 		    If ffile.Count>1 Then ffile.RemoveAt(ffile.LastIndex) // on élminite le dernier c'est à dire ce qui suit le . dans le nom de dossier
-		    imageResources.Value(String.FromArray(ffile, ".").Lowercase)=ff.NativePath // Assigns a value to a String variable by concatenating the elements of a one-dimensional String array. - popule le dictionnaire avec le chemin du fichier
+		    imageResourcesDictionary.Value(String.FromArray(ffile, ".").Lowercase)=ff.NativePath // Assigns a value to a String variable by concatenating the elements of a one-dimensional String array. - popule le dictionnaire avec le chemin du fichier
 		  Next
-		  Var k() As Variant=imageResources.Keys
+		  Var k() As Variant=imageResourcesDictionary.Keys
 		  For i As Integer=0 To k.LastIndex
 		    sampleImage.AddRow k(i).StringValue.Titlecase
 		    sampleImage.RowTagAt(i)=k(i).StringValue
@@ -1464,7 +1464,7 @@ End
 
 	#tag Method, Flags = &h21
 		Private Function loadFromResource(resName as String) As FolderItem
-		  Var path As String=imageResources.Lookup(resName.Lowercase, "")
+		  Var path As String=imageResourcesDictionary.Lookup(resName.Lowercase, "")
 		  If path.IsEmpty Then Return Nil
 		  
 		  Var f As FolderItem
@@ -1639,7 +1639,7 @@ End
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
-		Private imageResources As Dictionary
+		Private imageResourcesDictionary As Dictionary
 	#tag EndProperty
 
 	#tag Property, Flags = &h21
